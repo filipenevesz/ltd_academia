@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image } from "react-native"
+import { Text, View, StyleSheet, Image, TextInput, Pressable } from "react-native"
 
 import LoginImage from "../login-page/assets-login/frame-login-page.png"
 
@@ -10,8 +10,22 @@ export const Login = () => {
         </View>
 
         <View style={styles.inputLogin}>
-            
+            <Text style={styles.label}>Email</Text>
+            <TextInput 
+                style={styles.input}
+                placeholder="Digite seu email"
+            />
         </View>
+
+        <View style={styles.inputLogin}>
+            <Text style={styles.label}>Senha</Text>
+            <TextInput 
+                style={styles.input}
+                placeholder="Digite sua senha"
+                secureTextEntry
+            />
+        </View>
+        <Pressable title="Login"/>
     </View>;
 };
 
@@ -30,6 +44,17 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 38,
         fontWeight: "800",
-
+    },
+    label: {
+        marginBottom: 5,
+        fontSize: 16,
+        color: 'white',
+    
+    },
+    input: {
+        height: 40,
+        paddingLeft: 10,
+        backgroundColor: '#D9D9D9',
+        width: '100%',
     }
 })
