@@ -173,3 +173,5 @@ const styles = StyleSheet.create({
         marginTop: 7,
     }
 })
+
+export default Login
