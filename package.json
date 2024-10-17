@@ -15,7 +15,14 @@
     "@react-navigation/native-stack": "^6.11.0",
     "expo": "~51.0.28",
     "expo-status-bar": "~1.12.1",
+<<<<<<< HEAD
     "ltd_academia": "file:",
+=======
+<<<<<<< HEAD
+=======
+    "ltd_academia": "file:",
+>>>>>>> 9b3d3d9 (BOA TARDE BRUNO)
+>>>>>>> 29edb0c (Tudo ok)
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",

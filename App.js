@@ -28,7 +28,10 @@ export default function App() {
     tabBarLabelStyle: {
       fontWeight: "900",
       fontSize: 15,
+<<<<<<< HEAD
       color: "white",
+=======
+>>>>>>> 29edb0c (Tudo ok)
       tabBarActiveTintColor: "#ED5359", 
       tabBarInactiveTintColor: "white",
       
@@ -87,4 +90,8 @@ export default function App() {
       )}
     </NavigationContainer>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 29edb0c (Tudo ok)
