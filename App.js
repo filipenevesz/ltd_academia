@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
+import { StatusBar} from "react-native";
 
 // pages
 import { Home } from "./screens/home/home";
@@ -11,10 +12,12 @@ import { Profile } from "./screens/profile/profile";
 import { Training } from "./screens/training/training";
 import Login from "./screens/login-page/login";
 
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   const [isSignedIn, setisSignedIn] = useState(false);
+
 
   const screenOptions = {
     tabBarStyle: {
@@ -28,10 +31,6 @@ export default function App() {
     tabBarLabelStyle: {
       fontWeight: "900",
       fontSize: 15,
-<<<<<<< HEAD
-      color: "white",
-=======
->>>>>>> 29edb0c (Tudo ok)
       tabBarActiveTintColor: "#ED5359", 
       tabBarInactiveTintColor: "white",
       
@@ -42,6 +41,12 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
+
       {!isSignedIn ? (
         <Login login={() => setisSignedIn(true)} />
       ) : (
@@ -90,8 +95,4 @@ export default function App() {
       )}
     </NavigationContainer>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 29edb0c (Tudo ok)

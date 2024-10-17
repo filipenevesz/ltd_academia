@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native-web'
+import { View, Text, StyleSheet } from 'react-native'
 import image from '../../assets/Home (1).png'
 import { Image } from 'react-native'
 
