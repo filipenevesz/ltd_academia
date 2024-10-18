@@ -25,6 +25,7 @@ export default function App() {
       borderRadius: 10,
       marginBottom: 10,
       marginLeft: "5%",
+      paddingBottom: 15,
     },
     tabBarLabelStyle: {
       fontWeight: "900",
