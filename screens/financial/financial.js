@@ -1,9 +1,16 @@
 import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import image from '../../assets/Financeiro.png'
+import { Image } from 'react-native'
 
-const financial = () => {
-    return (
-        <div>financial</div>
-    )
+export const Financial = () => {
+    return <View><Image style={styles.image} source={image} /></View>
+
 }
 
-export default financial
+
+const styles = StyleSheet.create({
+    image: {
+        width: '100%'
+    }
+})

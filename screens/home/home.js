@@ -1,9 +1,18 @@
 import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import image from '../../assets/Home (1).png'
+import { Image } from 'react-native'
 
-const home = () => {
-    return (
-        <div>home</div>
-    )
+export const Home = () => {
+    return <View>
+        <Image style={styles.image} source={image} />
+    </View>
+
 }
 
-export default home
+
+const styles = StyleSheet.create({
+    image: {
+        width: '100%'
+    }
+})

@@ -2,23 +2,25 @@ import { Text, View, StyleSheet, Image, TextInput, Pressable, TouchableOpacity }
 import LoginImage from "../login-page/assets-login/frame-login-page.png";
 import GoogleIcon from "../login-page/assets-login/Google.png";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 // useState para o hover:
-export const Login = () => { 
+export const Login = ({ login }) => {
     const [hovered, setHovered] = useState(false);
+    // const [login, setisSignedIn] = useState(false);
 
     return <View style={styles.containerLogin}>
 
         {/*View da imagem e do texto 'Bem vindo'*/}
-        <View style={styles.header}>    
-            <Image style={styles.imgLogin} source={LoginImage}/> 
+        <View style={styles.header}>
+            <Image style={styles.imgLogin} source={LoginImage} />
             <Text style={styles.textLogin}>Bem-vindo(a)!</Text>
         </View>
 
         {/*Input do email*/}
         <View style={styles.inputLogin}>
             <Text style={styles.label}>Email</Text>
-            <TextInput 
+            <TextInput
                 style={styles.input}
                 placeholder="Digite seu email"
             />
@@ -27,15 +29,15 @@ export const Login = () => {
         {/*Input da senha*/}
         <View style={styles.inputLogin}>
             <Text style={styles.label}>Senha</Text>
-            <TextInput 
+            <TextInput
                 style={styles.input}
                 placeholder="Digite sua senha"
                 secureTextEntry
             />
             {/*Botao de hover no 'Esqueceu a senha'*/}
-            <Pressable 
-            onPressIn={() => setHovered(true)}
-            onPressOut = {() => setHovered(false)}>
+            <Pressable
+                onPressIn={() => setHovered(true)}
+                onPressOut={() => setHovered(false)}>
                 <Text style={[styles.forgotPassword, hovered && styles.hoveredText]}>Esqueceu a senha?</Text>
             </Pressable>
         </View>
@@ -43,18 +45,19 @@ export const Login = () => {
         {/*Container dos botoes*/}
         <View style={styles.containerButtons}>
 
-        {/*Botao Principal de Logar*/}
-        <TouchableOpacity style={styles.buttonLogin} >
-            <Text style={styles.buttonLoginText}>Entrar</Text>
-        </TouchableOpacity>
+            {/*Botao Principal de Logar*/}
+            <TouchableOpacity style={styles.buttonLogin} onPress={login} >
+                <Text style={styles.buttonLoginText}>Entrar</Text>
 
-        {/*Botao para logar com o google*/}
-        <TouchableOpacity style={styles.buttonGoogle}>
-            <View style={styles.googleButtonContent}>
-                <Image style={styles.googleIconImg} source={GoogleIcon}/>
-                <Text style={styles.buttonLoginGoogle}>Entrar com o Google</Text>
-            </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
+
+            {/*Botao para logar com o google*/}
+            <TouchableOpacity style={styles.buttonGoogle}>
+                <View style={styles.googleButtonContent}>
+                    <Image style={styles.googleIconImg} source={GoogleIcon} />
+                    <Text style={styles.buttonLoginGoogle}>Entrar com o Google</Text>
+                </View>
+            </TouchableOpacity>
 
         </View>
     </View>;
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         fontSize: 16,
         color: 'white',
-    
+
     },
     inputLogin: {
         marginTop: 15,
@@ -109,6 +112,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
         elevation: 5,
+
     },
     forgotPassword: {
         marginTop: 5,
@@ -137,6 +141,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
         elevation: 5,
+
     },
     buttonLoginText: {
         color: 'white',
@@ -158,7 +163,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
         elevation: 5,
-        
+
     },
     buttonLoginGoogle: {
         fontWeight: "700",
