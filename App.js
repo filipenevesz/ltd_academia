@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { StatusBar} from "react-native";
+import { StatusBar } from "react-native";
 
 // pages
 import { Home } from "./screens/home/home";
@@ -31,11 +31,11 @@ export default function App() {
     tabBarLabelStyle: {
       fontWeight: "900",
       fontSize: 15,
-      tabBarActiveTintColor: "#ED5359", 
+      tabBarActiveTintColor: "#ED5359",
       tabBarInactiveTintColor: "white",
-      
+
     },
-    tabBarActiveTintColor: "#ED5359", 
+    tabBarActiveTintColor: "#ED5359",
     tabBarInactiveTintColor: "white",
   };
 
