@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import React from 'react'
-
+import {StatusBar} from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export function Profile() {
   return (
@@ -19,11 +20,21 @@ export function Profile() {
       <View>
         <Text style={styles.textInfo}>Minhas informações:</Text>
         <ScrollView style={styles.card}>
-          <Text style={styles.textCard}>Email:</Text>
-          <Text style={styles.textCard}>Endereço:</Text>
-          <Text style={styles.textCard}>Matrícula:</Text>
-          <Text style={styles.textCard}>Peso:</Text>
-          <Text style={styles.textCard}>Altura:</Text>
+          <Text style={styles.textCard}>
+            Email: <Text style={styles.textCardInfo}>daviniccacio@gmail.com</Text>
+          </Text>
+          <Text style={styles.textCard}>
+            Endereço: <Text style={styles.textCardInfo}>Rua Argentina, 98, Centro</Text>
+          </Text>
+          <Text style={styles.textCard}>
+            Matrícula: <Text style={styles.textCardInfo}>0000</Text>
+          </Text>
+          <Text style={styles.textCard}>
+            Peso: <Text style={styles.textCardInfo}>80Kg</Text>
+          </Text>
+          <Text style={styles.textCard}>
+            Altura: <Text style={styles.textCardInfo}>180cm</Text>
+          </Text>
         </ScrollView>
       </View>
 
@@ -58,13 +69,8 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       marginTop: 20,
     },
-    profileTextName: {
-      padding: 3,
-      fontWeight: "700",
-      fontSize: 23,
-    },
     profilePhoto: { 
-      margin: 30,
+      margin: 5,
       alignItems: 'center',
       width: 100,
       height: 100,
@@ -75,10 +81,31 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.8,
       shadowRadius: 4,
     },
+    profilePhotoChange: { 
+      margin: 5,
+      alignItems: 'center',
+      right: 0,
+      bottom: 0,
+      position: 'absolute',
+      width: 30,
+      height: 30,
+      borderRadius: 50,
+      backgroundColor: 'red',
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.8,
+      shadowRadius: 4,
+    },
+    profileTextName: {
+      padding: 3,
+      fontWeight: "700",
+      fontSize: 23,
+    },
     textInfo: {
       fontSize: 20,
       paddingTop: 50,
       paddingLeft: 30,
+      fontWeight: '700',
     },
     card: {
       padding: 10,
@@ -94,8 +121,12 @@ const styles = StyleSheet.create({
     },
     textCard: {
       fontSize: 17,
-      fontWeight: '400',
+      fontWeight: '700',
       padding: 2,
+    },
+    textCardInfo: {
+      fontWeight: '400',
+      fontSize: 17,
     },
     buttons: {
       flexDirection: "row-reverse",
@@ -115,5 +146,5 @@ const styles = StyleSheet.create({
     buttonText: {
       fontWeight: "bold",
       color: "white",
-    }
+    },
 });
