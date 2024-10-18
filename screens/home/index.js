@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { styles } from './style.js'
-// import icon from './icones/icon.js'
+
 
 
 export default function HomeScreen() {
@@ -9,12 +9,15 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
-        {/* <TouchableOpacity><Image source={icon.notify}></Image></TouchableOpacity> */}
+        <TouchableOpacity><Image source={require('../../assets/Frame.png')}></Image></TouchableOpacity>
 
       </View>
       <View style={styles.redline} />
 
       <View style={styles.profileCard}>
+        <Image source={require('../../assets/Group 5.png')}></Image>
+        <Text style={styles.texto}>Bom dia! </Text>
+        <Text style={styles.textAbaixo}>Francisco Pinto</Text>
 
       </View>
 

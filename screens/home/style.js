@@ -34,22 +34,6 @@ export const styles ={
       
     },
     
-    profileText: {
-      marginLeft: 50,
-      alignLeft: 'flex-start',
-      margin: 20,
-      justifyContent: 'flex-start',
-      margin:10
-    },
-    
-    name: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      color: '#fff',
-      marginLeft: 8,
-    
-    },
-    
     card: {
       backgroundColor: '#fff',
       margin: 10,
@@ -62,19 +46,7 @@ export const styles ={
     
       
     },
-    cardImage: {
-      
-      margin: 50,
-      overflow: 'hidden',
-      elevation: 2,
-      width: 200,
-      height: 200,
-      borderRadius: 100,
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      marginTop: 20,
     
-    },
     cardTitle: {
       position: 'absolute',
       top: 10,
@@ -99,26 +71,34 @@ export const styles ={
       padding:10,
       height:'60%',
       
-      
     },
 
-    imagem:{
-      
-      marginRight:'100%',
-      width:40,
-      height:40,
-      alignSelf: 'flex-end',
-      justifyContent: 'center',
-      borderRadius:20,
-      position:'relative'
-      
-    },
     redline:{
       backgroundColor:'#ED5359',
       width:'100%',
       height:1,
       
     },
+    texto:{
+      fontSize:'14px',
+      color:'white',
+      marginTop:10,
+      marginBottom:5,
+      marginLeft:5,
+      
+
+  
+    },
+    textAbaixo:{
+      fontSize:'14px',
+      color:'white',
+      marginTop:5,
+      textAlign:'left',
+      
+      
+
+
+    }
 
     
 
