@@ -4,7 +4,7 @@ import React from 'react'
 
 export function Profile() {
   return (
-    <View style={styles.container}>
+    <ScrollView  style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
       </View>
@@ -35,7 +35,7 @@ export function Profile() {
           <Text style={styles.buttonText}>Visualizar ficha</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
