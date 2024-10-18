@@ -25,7 +25,7 @@ export const Login = () => {
                 secureTextEntry
             />
         </View>
-        <Pressable title="Login"/>
+        <Pressable title="Login" />
     </View>;
 };
 
