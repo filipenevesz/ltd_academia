@@ -10,7 +10,10 @@ import React from "react";
 
 export function Profile() {
   return (
+
     <SafeAreaView style={styles.container}>
+
+
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
       </View>
@@ -122,4 +125,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
+
 });
