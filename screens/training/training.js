@@ -1,21 +1,119 @@
-import React from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
-import image from "../../assets/Treino.png";
-import { Image , StatusBar} from "react-native";
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+  StatusBar,
+} from "react-native";
+import { Calendar } from "react-native-calendars";
+
+const colors = {
+  background: "#f0f0f0",
+  textForeground: "#000",
+  mutedForeground: "#6c757d",
+  cardBackground: "#fff",
+  primary: "#ED5359", // Cor dos botões e marcadores de treino
+};
 
 export const Training = () => {
+  const [selectedDate, setSelectedDate] = useState("");
+
+  // Dados fictícios para os treinos
+  const treinos = {
+    "2024-10-07": "Deadlift 12'\n10 Burpees\nToes-To-Bar\nRun 2Km",
+    "2024-10-10": "Squat 3x12\nPush-Ups 3x15\nPlank 1 min",
+  };
+
+  // Marcação dos dias de treino
+  const markedDates = Object.keys(treinos).reduce((acc, date) => {
+    acc[date] = {
+      marked: true,
+      dotColor: colors.primary,
+      selected: true,
+      selectedColor: colors.primary,
+      selectedTextColor: "#fff",
+    };
+    return acc;
+  }, {});
+
   return (
-    <SafeAreaView>
-      <StatusBar barStyle="dark-content" backgroundColor={"f0f0f0"} />
-      <View>
-        <Image style={styles.image} source={image} />
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+      <Calendar
+        onDayPress={(day) => setSelectedDate(day.dateString)}
+        markedDates={markedDates}
+        theme={{
+          backgroundColor: colors.background,
+          calendarBackground: colors.cardBackground,
+          textSectionTitleColor: colors.textForeground,
+          selectedDayBackgroundColor: colors.primary,
+          selectedDayTextColor: "#fff",
+          todayTextColor: colors.primary,
+          dayTextColor: colors.textForeground,
+          textDisabledColor: colors.mutedForeground,
+          dotColor: colors.primary,
+          selectedDotColor: "#fff",
+        }}
+      />
+      <View style={styles.details}>
+        <Text style={styles.title}>Treino do dia:</Text>
+        <Text style={styles.treino}>
+          {treinos[selectedDate] || "Nenhum treino para este dia"}
+        </Text>
+      </View>
+      <View style={styles.buttons}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Gerenciar o treino</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Visualizar o treino</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  image: {
-    width: "100%",
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: colors.background,
+  },
+  details: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: colors.cardBackground,
+    borderRadius: 5,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: colors.textForeground,
+  },
+  treino: {
+    fontSize: 16,
+    color: colors.textForeground,
+  },
+  buttons: {
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "center", // Centraliza os botões horizontalmente
+  },
+  button: {
+    backgroundColor: colors.primary,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 20, // Bordas arredondadas
+    marginHorizontal: 10, // Espaçamento entre os botões
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
   },
 });
+
+export default Training;
