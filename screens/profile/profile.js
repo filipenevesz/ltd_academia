@@ -1,60 +1,60 @@
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView, StatusBar } from 'react-native';
 import React from 'react'
-import {StatusBar} from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
 import Frame from '../profile/assets_profile/Frame.png';
 
 export function Profile() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
         <View style={styles.redLine}/>
       </View>
 
-      <View style={styles.profile}>
-        <View style={styles.profileContainer}>
-          <View style={styles.profilePhoto}/>
-          <TouchableOpacity style={styles.profilePhotoChange}/>
+      <ScrollView style={styles.container}>
+        <View style={styles.profile}>
+          <View style={styles.profileContainer}>
+            <View style={styles.profilePhoto}/>
+            <TouchableOpacity style={styles.profilePhotoChange}/>
+          </View>
+          <Text style={styles.profileTextName}>Francisco Pinto</Text>
+          <Text>(99) 9 9999-9999</Text>
+          <Text>
+            <Image style={styles.localImage} source={Frame}/>
+            Rua Argentina, 98, Centro
+          </Text>
         </View>
-        <Text style={styles.profileTextName}>Francisco Pinto</Text>
-        <Text>(99) 9 9999-9999</Text>
-        <Text>
-          <Image style={styles.localImage} source={Frame}/>
-          Rua Argentina, 98, Centro
-        </Text>
-      </View>
 
-      <View>
-        <Text style={styles.textInfo}>Minhas informações:</Text>
-        <ScrollView style={styles.card}>
-          <Text style={styles.textCard}>
-            Email: <Text style={styles.textCardInfo}>daviniccacio@gmail.com</Text>
-          </Text>
-          <Text style={styles.textCard}>
-            Endereço: <Text style={styles.textCardInfo}>Rua Argentina, 98, Centro</Text>
-          </Text>
-          <Text style={styles.textCard}>
-            Matrícula: <Text style={styles.textCardInfo}>0000</Text>
-          </Text>
-          <Text style={styles.textCard}>
-            Peso: <Text style={styles.textCardInfo}>80Kg</Text>
-          </Text>
-          <Text style={styles.textCard}>
-            Altura: <Text style={styles.textCardInfo}>180cm</Text>
-          </Text>
-        </ScrollView>
-      </View>
+        <View>
+          <Text style={styles.textInfo}>Minhas informações:</Text>
+          <ScrollView style={styles.card}>
+            <Text style={styles.textCard}>
+              Email: <Text style={styles.textCardInfo}>daviniccacio@gmail.com</Text>
+            </Text>
+            <Text style={styles.textCard}>
+              Endereço: <Text style={styles.textCardInfo}>Rua Argentina, 98, Centro</Text>
+            </Text>
+            <Text style={styles.textCard}>
+              Matrícula: <Text style={styles.textCardInfo}>0000</Text>
+            </Text>
+            <Text style={styles.textCard}>
+              Peso: <Text style={styles.textCardInfo}>80Kg</Text>
+            </Text>
+            <Text style={styles.textCard}>
+              Altura: <Text style={styles.textCardInfo}>180cm</Text>
+            </Text>
+          </ScrollView>
+        </View>
 
-      <View style={styles.buttons}>
-        <TouchableOpacity style={styles.buttonStyle}>
-          <Text style={styles.buttonText} >Editar perfil</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
-          <Text style={styles.buttonText}>Visualizar ficha</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+        <View style={styles.buttons}>
+          <TouchableOpacity style={styles.buttonStyle}>
+            <Text style={styles.buttonText} >Editar perfil</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle}>
+            <Text style={styles.buttonText}>Visualizar ficha</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
