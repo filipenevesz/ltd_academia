@@ -1,20 +1,28 @@
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
 import React from 'react'
 import {StatusBar} from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Frame from '../profile/assets_profile/Frame.png';
 
 export function Profile() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
+        <View style={styles.redLine}/>
       </View>
 
       <View style={styles.profile}>
-        <View style={styles.profilePhoto}/>
+        <View style={styles.profileContainer}>
+          <View style={styles.profilePhoto}/>
+          <TouchableOpacity style={styles.profilePhotoChange}/>
+        </View>
         <Text style={styles.profileTextName}>Francisco Pinto</Text>
         <Text>(99) 9 9999-9999</Text>
-        <Text>Rua Argentina, 98, Centro</Text>
+        <Text>
+          <Image style={styles.localImage} source={Frame}/>
+          Rua Argentina, 98, Centro
+        </Text>
       </View>
 
       <View>
@@ -64,37 +72,39 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         fontSize: 30,
     },
+    redLine: {
+      backgroundColor: "#ED5359",
+      width: '100%',
+      height: 2,
+    },
     profile: {
       alignItems: "center",
       justifyContent: "center",
       marginTop: 20,
     },
-    profilePhoto: { 
-      margin: 5,
+    profileContainer: {
       alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative', 
+    },
+    profilePhoto: {
       width: 100,
       height: 100,
-      borderRadius: 50,
-      backgroundColor: 'gray',
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.8,
-      shadowRadius: 4,
-    },
-    profilePhotoChange: { 
-      margin: 5,
+      backgroundColor: 'grey',
+      borderRadius: 50, 
+      justifyContent: 'center',
       alignItems: 'center',
-      right: 0,
-      bottom: 0,
-      position: 'absolute',
+    },
+    profilePhotoChange: {
       width: 30,
       height: 30,
-      borderRadius: 50,
-      backgroundColor: 'red',
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.8,
-      shadowRadius: 4,
+      backgroundColor: 'blue',
+      borderRadius: 50, 
+      position: 'absolute',
+      bottom: 3, 
+      right: 3, 
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     profileTextName: {
       padding: 3,
@@ -146,5 +156,8 @@ const styles = StyleSheet.create({
     buttonText: {
       fontWeight: "bold",
       color: "white",
+    },
+    localImage: {
+      alignItems: "center",
     },
 });
