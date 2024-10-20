@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
 import { styles } from './style.js'
 
 
@@ -12,7 +12,7 @@ export default function HomeScreen() {
         <TouchableOpacity><Image source={require('../../assets/Frame.png')}></Image></TouchableOpacity>
 
       </View>
-      <View style={styles.redline} />
+      <Text style={styles.redline} ></Text>
 
       <View style={styles.profileCard}>
         <Image source={require('../../assets/Group 5.png')}></Image>
@@ -20,22 +20,18 @@ export default function HomeScreen() {
         <Text style={styles.textAbaixo}>Francisco Pinto</Text>
 
       </View>
+      
 
-
-      <View style={styles.cardgroup}>
+  
         <View style={styles.card}>
-          <Image
-            style={styles.cardImage}
-          />
-
+          <ImageBackground style={styles.imagem} source={require('../../assets/Group.png')}></ImageBackground>
           <Text style={styles.cardTitle}>Quinta-feira</Text>
+          <Text style={styles.underline}></Text>
           <Text style={styles.cardSubtitle}>Dia de Treino!</Text>
-
-
+        <View style={styles.cardInterno}>
+          <Text style={styles.texCardInterno}>Categoria do Treino:</Text>
+          <Text style={styles.underline}></Text>
         </View>
-
-
-
       </View>
 
 
