@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import image from "../../assets/Treino.png";
+import { Image , StatusBar} from "react-native";
 
-const training = () => {
-    return (
-        <div>training</div>
-    )
-}
+export const Training = () => {
+  return (
+    <SafeAreaView>
+      <StatusBar barStyle="dark-content" backgroundColor={"f0f0f0"} />
+      <View>
+        <Image style={styles.image} source={image} />
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default training
+const styles = StyleSheet.create({
+  image: {
+    width: "100%",
+  },
+});
