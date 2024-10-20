@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
-
 import { styles } from './style.js'
 
-export const Home = () => {
+
+
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -36,6 +37,7 @@ export const Home = () => {
 
     </View>
   );
-};
+}
+
 
 
