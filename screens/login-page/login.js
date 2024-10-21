@@ -10,7 +10,6 @@ import {
 import LoginImage from "../login-page/assets-login/frame-login-page.png";
 import GoogleIcon from "../login-page/assets-login/Google.png";
 import { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 
 // useState para o hover:
 export const Login = ({ login }) => {
@@ -18,7 +17,7 @@ export const Login = ({ login }) => {
   // const [login, setisSignedIn] = useState(false);
 
   return (
-    
+
     <View style={styles.containerLogin}>
       {/*View da imagem e do texto 'Bem vindo'*/}
       <View style={styles.header}>

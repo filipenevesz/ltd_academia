@@ -26,7 +26,7 @@ export const Home = () => {
         <ImageBackground style={styles.imagem} source={require('../../assets/Group.png')}></ImageBackground>
         <Text style={styles.cardTitle}>Quinta-feira</Text>
         <Text style={styles.underline}></Text>
-        <Text style={styles.cardSubtitle}>Dia de Descanso!</Text>
+        <Text style={styles.cardSubtitle}>Dia de Treino!</Text>
         <View style={styles.cardInterno}>
           <Text style={styles.texCardInterno}>Categoria do Treino:</Text>
           <Text style={styles.underline}></Text>
