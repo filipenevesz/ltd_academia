@@ -45,11 +45,11 @@ export const styles ={
       overflow: 'hidden',
       elevation: 8,
       //height: 100,
-      width:300,
-      marginTop:25,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginVertical:150
+      //width:300,
+      //marginTop:25,
+      //justifyContent: 'center',
+      //alignItems: 'center',
+      //marginVertical:150
       
       
       
@@ -116,21 +116,25 @@ export const styles ={
     },
     cardInterno:{
       backgroundColor:'#fff',
-      margin:5,
-      padding:15,
+      margin:8,
+      padding:45,
       borderRadius:20,
-      height:'70%',
+      height:'80%',
       width:'100%',
       position:'relative',
       alignItems:'center',
-      justifyContent:'center'
+      justifyContent:'center',
+      top:25,
+      right:2,
+      alignSelf: 'center',
     },
     texCardInterno:{
       fontSize:22,
       fontWeight:'bold',
       color:'#2B2B2B',
-      marginBottom:230,
-      textDecorationLine: 'underline'
+      marginBottom:240,
+      textDecorationLine: 'underline',
+      
 
     },
     

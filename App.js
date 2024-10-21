@@ -10,7 +10,7 @@ import { Home } from "./screens/home/home";
 import { Financial } from "./screens/financial/financial";
 import { Profile } from "./screens/profile/profile";
 import { Training } from "./screens/training/training";
-import Login from "./screens/login-page/login";
+import {Login} from "./screens/login-page/login";
 
 const Tab = createBottomTabNavigator();
 

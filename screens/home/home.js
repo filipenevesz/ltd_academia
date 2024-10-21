@@ -5,11 +5,12 @@ import { styles } from './style.js'
 
 export const Home = () => {
   return (
+    
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
         <TouchableOpacity><Image source={require('../../assets/Frame.png')}></Image></TouchableOpacity>
-
+        
       </View>
       <Text style={styles.redline} ></Text>
 
@@ -30,6 +31,7 @@ export const Home = () => {
         <View style={styles.cardInterno}>
           <Text style={styles.texCardInterno}>Categoria do Treino:</Text>
           <Text style={styles.underline}></Text>
+          
         </View>
       </View>
 
