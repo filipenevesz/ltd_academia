@@ -52,8 +52,23 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 5,
-    marginBottom: 16,
-    width: "90%",
+    marginBottom: 20,
+    width: "100%",
+    justifyContent: "center",
+  },
+  cardTwo:{
+    backgroundColor: colors.cardBackground,
+    padding: 16,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
+    marginBottom: 18,
+    width: "100%",
+    justifyContent: "center",
+
+
   },
   cardTitle: {
     fontSize: 18,
@@ -89,7 +104,9 @@ const styles = StyleSheet.create({
   primaryButton: {
     backgroundColor: colors.primary, 
     padding: 12,
-    borderRadius: 8,
+    borderRadius:8,
+    //width:160,
+    //height:40
   },
   primaryButtonText: {
     color: "#fff", // Texto em branco
@@ -106,7 +123,7 @@ const styles = StyleSheet.create({
     
   },
   dangerButton: {
-    backgroundColor: colors.danger,
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
     marginTop: 16,
@@ -114,6 +131,7 @@ const styles = StyleSheet.create({
   dangerButtonText: {
     color: "#fff", // Texto em branco
     fontWeight: "bold",
+    textAlign: "center",
   },
   image: {
     width: 40,
@@ -188,7 +206,7 @@ export const Financial = () => {
           </View>
         </View>
 
-        <View style={styles.card}>
+        <View style={styles.cardTwo}>
           <Text style={styles.cardTitle}>Próximo pagamento</Text>
           <View style={styles.infoRow}>
             <Text style={styles.pendingText}>Mensalidade Pendente</Text>
