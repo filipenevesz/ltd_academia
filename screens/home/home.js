@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, StatusBar, ImageBackground,ScrollView } from 'react-native';
 
 import { styles } from './style.js'
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Home = () => {
   return (
-    
+    <SafeAreaView>
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
@@ -37,7 +39,10 @@ export const Home = () => {
 
 
     </View>
+    </ScrollView>
+    </SafeAreaView>
   );
+
 };
 
 

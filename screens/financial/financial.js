@@ -99,9 +99,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary, 
     padding: 12,
     borderRadius: 8,
+    
   },
   mutedButtonText: {
     color: "#fff", // Texto em branco
+    
   },
   dangerButton: {
     backgroundColor: colors.danger,
