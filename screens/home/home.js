@@ -44,8 +44,8 @@ export const Home = () => {
 
 
     </View>
-    </ScrollView >
-    </SafeAreaView >
+    //  </ScrollView >
+    // </SafeAreaView >
   );
 
 };
