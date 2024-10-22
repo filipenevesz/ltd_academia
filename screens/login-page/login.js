@@ -6,6 +6,8 @@ import {
   TextInput,
   Pressable,
   TouchableOpacity,
+  SafeAreaView,
+  ScrollView
 } from "react-native";
 import LoginImage from "../login-page/assets-login/frame-login-page.png";
 import GoogleIcon from "../login-page/assets-login/Google.png";
@@ -18,58 +20,66 @@ export const Login = ({ login }) => {
 
   return (
 
-    <View style={styles.containerLogin}>
-      {/*View da imagem e do texto 'Bem vindo'*/}
-      <View style={styles.header}>
-        <Image style={styles.imgLogin} source={LoginImage} />
-        <Text style={styles.textLogin}>Bem-vindo(a)!</Text>
-      </View>
-
-      {/*Input do email*/}
-      <View style={styles.inputLogin}>
-        <Text style={styles.label}>Email</Text>
-        <TextInput style={styles.input} placeholder="Digite seu email" />
-      </View>
-
-      {/*Input da senha*/}
-      <View style={styles.inputLogin}>
-        <Text style={styles.label}>Senha</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite sua senha"
-          secureTextEntry
-        />
-        {/*Botao de hover no 'Esqueceu a senha'*/}
-        <Pressable
-          onPressIn={() => setHovered(true)}
-          onPressOut={() => setHovered(false)}
-        >
-          <Text style={[styles.forgotPassword, hovered && styles.hoveredText]}>
-            Esqueceu a senha?
-          </Text>
-        </Pressable>
-      </View>
-
-      {/*Container dos botoes*/}
-      <View style={styles.containerButtons}>
-        {/*Botao Principal de Logar*/}
-        <TouchableOpacity style={styles.buttonLogin} onPress={login}>
-          <Text style={styles.buttonLoginText}>Entrar</Text>
-        </TouchableOpacity>
-
-        {/*Botao para logar com o google*/}
-        <TouchableOpacity style={styles.buttonGoogle}>
-          <View style={styles.googleButtonContent}>
-            <Image style={styles.googleIconImg} source={GoogleIcon} />
-            <Text style={styles.buttonLoginGoogle}>Entrar com o Google</Text>
+    <SafeAreaView style={styles.container} >
+      <ScrollView>
+        <View style={styles.containerLogin}>
+          {/*View da imagem e do texto 'Bem vindo'*/}
+          <View style={styles.header}>
+            <Image style={styles.imgLogin} source={LoginImage} />
+            <Text style={styles.textLogin}>Bem-vindo(a)!</Text>
           </View>
-        </TouchableOpacity>
-      </View>
-    </View>
+
+          {/*Input do email*/}
+          <View style={styles.inputLogin}>
+            <Text style={styles.label}>Email</Text>
+            <TextInput style={styles.input} placeholder="Digite seu email" />
+          </View>
+
+          {/*Input da senha*/}
+          <View style={styles.inputLogin}>
+            <Text style={styles.label}>Senha</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Digite sua senha"
+              secureTextEntry
+            />
+            {/*Botao de hover no 'Esqueceu a senha'*/}
+            <Pressable
+              onPressIn={() => setHovered(true)}
+              onPressOut={() => setHovered(false)}
+            >
+              <Text style={[styles.forgotPassword, hovered && styles.hoveredText]}>
+                Esqueceu a senha?
+              </Text>
+            </Pressable>
+          </View>
+
+          {/*Container dos botoes*/}
+          <View style={styles.containerButtons}>
+            {/*Botao Principal de Logar*/}
+            <TouchableOpacity style={styles.buttonLogin} onPress={login}>
+              <Text style={styles.buttonLoginText}>Entrar</Text>
+            </TouchableOpacity>
+
+            {/*Botao para logar com o google*/}
+            <TouchableOpacity style={styles.buttonGoogle}>
+              <View style={styles.googleButtonContent}>
+                <Image style={styles.googleIconImg} source={GoogleIcon} />
+                <Text style={styles.buttonLoginGoogle}>Entrar com o Google</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView >
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+  },
   containerLogin: {
     flex: 1,
     backgroundColor: "#2B2B2B",
