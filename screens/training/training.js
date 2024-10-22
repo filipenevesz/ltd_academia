@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  SafeAreaView,
-  StatusBar,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from "react-native";
 import { Calendar } from "react-native-calendars";
+import { ScrollView } from "react-native-web";
 
 const colors = {
   background: "#f0f0f0",
@@ -41,36 +35,42 @@ export const Training = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
-      <Calendar
-        onDayPress={(day) => setSelectedDate(day.dateString)}
-        markedDates={markedDates}
-        theme={{
-          backgroundColor: colors.background,
-          calendarBackground: colors.cardBackground,
-          textSectionTitleColor: colors.textForeground,
-          selectedDayBackgroundColor: colors.primary,
-          selectedDayTextColor: "#fff",
-          todayTextColor: colors.primary,
-          dayTextColor: colors.textForeground,
-          textDisabledColor: colors.mutedForeground,
-          dotColor: colors.primary,
-          selectedDotColor: "#fff",
-        }}
-      />
-      <View style={styles.details}>
-        <Text style={styles.title}>Treino do dia:</Text>
-        <Text style={styles.treino}>
-          {treinos[selectedDate] || "Nenhum treino para este dia"}
-        </Text>
+      <View style={styles.header}>
+        <Text style={styles.textHeader}>Perfil</Text>
+        <View style={styles.redLine}/>
       </View>
-      <View style={styles.buttons}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Gerenciar o treino</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Visualizar o treino</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView style={styles.containerScroll}>
+        <Calendar
+          onDayPress={(day) => setSelectedDate(day.dateString)}
+          markedDates={markedDates}
+          theme={{
+            backgroundColor: colors.background,
+            calendarBackground: colors.cardBackground,
+            textSectionTitleColor: colors.textForeground,
+            selectedDayBackgroundColor: colors.primary,
+            selectedDayTextColor: "#fff",
+            todayTextColor: colors.primary,
+            dayTextColor: colors.textForeground,
+            textDisabledColor: colors.mutedForeground,
+            dotColor: colors.primary,
+            selectedDotColor: "#fff",
+          }}
+        />
+        <View style={styles.details}>
+          <Text style={styles.title}>Treino do dia:</Text>
+          <Text style={styles.treino}>
+            {treinos[selectedDate] || "Nenhum treino para este dia"}
+          </Text>
+        </View>
+        <View style={styles.buttons}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Gerenciar o treino</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Visualizar o treino</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -81,11 +81,34 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.background,
   },
+    header: {
+      backgroundColor: "#2B2B2B",
+  },
+  textHeader: {
+      color: "#FFFFFF",
+      padding: 20,
+      alignSelf: "flex-start",
+      fontSize: 30,
+      fontWeight: "700",
+  },
+  redLine: {
+    backgroundColor: "#ED5359",
+    width: '100%',
+    height: 2,
+  },
+  containerScroll: {
+    backgroundColor: colors.background,
+  },
   details: {
-    marginTop: 20,
+    margin: 20,
     padding: 10,
+    paddingBottom: 60,
     backgroundColor: colors.cardBackground,
     borderRadius: 5,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
   },
   title: {
     fontSize: 18,
@@ -98,7 +121,7 @@ const styles = StyleSheet.create({
     color: colors.textForeground,
   },
   buttons: {
-    marginTop: 20,
+    marginHorizontal: 17,
     flexDirection: "row",
     justifyContent: "center", // Centraliza os botões horizontalmente
   },
