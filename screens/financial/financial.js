@@ -28,6 +28,20 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: colors.background,
   },
+  header: {
+    backgroundColor: "#2B2B2B",
+},
+textHeader: {
+    color: "#FFFFFF",
+    padding: 20,
+    alignSelf: "flex-start",
+    fontSize: 30,
+},
+redLine: {
+  backgroundColor: "#ED5359",
+  width: '100%',
+  height: 2,
+},
   titleContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -142,6 +156,12 @@ export const Financial = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+
+      <View style={styles.header}>
+        <Text style={styles.textHeader}>Financeiro</Text>
+        <View style={styles.redLine}/>
+      </View>
+
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
           <Image
