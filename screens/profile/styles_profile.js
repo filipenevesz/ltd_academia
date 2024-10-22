@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
       fontSize: 20,
       paddingTop: 50,
       paddingLeft: 30,
-      fontWeight: '700',
+      fontWeight: '100',
     },
     card: {
       padding: 10,

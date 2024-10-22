@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  Image,
-  SafeAreaView, 
-  StatusBar, 
-} from "react-native";
+import {  View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const colors = {
   background: "#f0f0f0",
@@ -36,6 +27,7 @@ textHeader: {
     padding: 20,
     alignSelf: "flex-start",
     fontSize: 30,
+    fontWeight: "700",
 },
 redLine: {
   backgroundColor: "#ED5359",
@@ -164,11 +156,8 @@ export const Financial = () => {
 
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
-          <Image
-            style={styles.image}
-            source={require("../../assets/favicon.png")}
-          />
-          <Text style={styles.title}>Francisco Pinto</Text>
+          <Ionicons name="person-circle" size={60} color={"#2b2b2b"}/>
+          <Text style={styles.title}> Francisco Pinto</Text>
         </View>
 
         <View style={styles.titleContainer}>
