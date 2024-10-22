@@ -1,14 +1,21 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
-
+import { useNavigation } from "@react-navigation/native";
+import { Notifications } from "../notification/notification.js";
 import { styles } from './style.js'
 
 export const Home = () => {
+
+  const navigation = useNavigation();
+
   return (
+
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
-        <TouchableOpacity><Image source={require('../../assets/Frame.png')}></Image></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate(Notifications)} >
+          <Image source={require('../../assets/Frame.png')}/>
+        </TouchableOpacity>
 
       </View>
       <Text style={styles.redline} ></Text>
