@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackg
 import { useNavigation } from "@react-navigation/native";
 import { Notifications } from "../notification/notification.js";
 import { styles } from './style.js'
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Home = () => {
 
@@ -14,7 +15,7 @@ export const Home = () => {
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
         <TouchableOpacity onPress={() => navigation.navigate(Notifications)} >
-          <Image source={require('../../assets/Frame.png')}/>
+          <Image source={require('../../assets/Frame.png')} />
         </TouchableOpacity>
 
       </View>
@@ -37,12 +38,16 @@ export const Home = () => {
         <View style={styles.cardInterno}>
           <Text style={styles.texCardInterno}>Categoria do Treino:</Text>
           <Text style={styles.underline}></Text>
+
         </View>
       </View>
 
 
     </View>
+    </ScrollView >
+    </SafeAreaView >
   );
+
 };
 
 

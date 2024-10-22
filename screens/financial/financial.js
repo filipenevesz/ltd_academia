@@ -58,8 +58,23 @@ redLine: {
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 5,
-    marginBottom: 16,
-    width: "90%",
+    marginBottom: 20,
+    width: "100%",
+    justifyContent: "center",
+  },
+  cardTwo:{
+    backgroundColor: colors.cardBackground,
+    padding: 16,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
+    marginBottom: 18,
+    width: "100%",
+    justifyContent: "center",
+
+
   },
   cardTitle: {
     fontSize: 18,
@@ -95,7 +110,9 @@ redLine: {
   primaryButton: {
     backgroundColor: colors.primary, 
     padding: 12,
-    borderRadius: 8,
+    borderRadius:8,
+    //width:160,
+    //height:40
   },
   primaryButtonText: {
     color: "#fff", // Texto em branco
@@ -105,12 +122,14 @@ redLine: {
     backgroundColor: colors.primary, 
     padding: 12,
     borderRadius: 8,
+    
   },
   mutedButtonText: {
     color: "#fff", // Texto em branco
+    
   },
   dangerButton: {
-    backgroundColor: colors.danger,
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
     marginTop: 16,
@@ -118,6 +137,7 @@ redLine: {
   dangerButtonText: {
     color: "#fff", // Texto em branco
     fontWeight: "bold",
+    textAlign: "center",
   },
   image: {
     width: 40,
@@ -195,7 +215,7 @@ export const Financial = () => {
           </View>
         </View>
 
-        <View style={styles.card}>
+        <View style={styles.cardTwo}>
           <Text style={styles.cardTitle}>Próximo pagamento</Text>
           <View style={styles.infoRow}>
             <Text style={styles.pendingText}>Mensalidade Pendente</Text>
