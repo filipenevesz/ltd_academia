@@ -1,10 +1,9 @@
 import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView, StatusBar } from 'react-native';
-import React from 'react'
-import Frame from '../profile/assets_profile/Frame.png';
-import SwitchCamera from './assets_profile/SwitchCamera.png';
-import User from './assets_profile/User.png';
 import { styles } from './styles_profile'
 import { Ionicons } from "@expo/vector-icons";
+import React from 'react'
+
+
 
 export function Profile() {
   return (
@@ -18,19 +17,19 @@ export function Profile() {
         <View style={styles.profile}>
           <View style={styles.profileContainer}>
             <View style={styles.profilePhoto}>
-              <Image style={styles.userIcon} source={User}/>
+              <Ionicons name="person-circle" size={120} color={"#ffffff"}/>
             </View>
             <TouchableOpacity style={styles.profilePhotoChange}>
-              <Image style={styles.cameraIcon} source={SwitchCamera}/>
+              <Ionicons name="camera-reverse" size={20} color={"#ffffff"}/>
             </TouchableOpacity>
           </View>
           <Text style={styles.profileTextName}>Francisco Pinto</Text>
           <View style={styles.addressContainer}>
-            <Ionicons name="call-outline"/>
+            <Ionicons name="call" size={15} color={"#2B2B2B"}/>
             <Text>(99) 9 9999-9999</Text>
           </View>
           <View style={styles.addressContainer}>
-            <Image source={Frame} style={styles.locationIcon}/>
+            <Ionicons name="location" size={15} color={"#ED5359"}/>
             <Text style={styles.addressText}>Rua Argentina, 98, Centro</Text>
           </View>
         </View>

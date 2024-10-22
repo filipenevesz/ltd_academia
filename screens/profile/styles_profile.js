@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
         padding: 20,
         alignSelf: "flex-start",
         fontSize: 30,
+        fontWeight: "700",
     },
     redLine: {
       backgroundColor: "#ED5359",
@@ -40,7 +41,7 @@ export const styles = StyleSheet.create({
     profilePhotoChange: {
       width: 30,
       height: 30,
-      backgroundColor: 'blue',
+      backgroundColor: '#2b2b2b',
       borderRadius: 50, 
       position: 'absolute',
       bottom: 3, 
@@ -99,37 +100,11 @@ export const styles = StyleSheet.create({
       fontWeight: "bold",
       color: "white",
     },
-    userIcon: {
-      width: 80, 
-      height: 80,
-    },
-    cameraIcon: {
-      width: 25,
-      height: 25,
-      position: 'absolute',
-      bottom: 0,
-    },
     addressContainer: {
       flexDirection: 'row', 
       alignItems: 'center', 
     },
-    locationIcon: {
-      width: 18, 
-      height: 18,
-      marginRight: 5, 
-    },
     addressText: {
       fontSize: 16,
-    },
-    buttonEditInfo: {
-      width: 50,
-      height: 50,
-      right: 10,
-      bottom: 10,
-      backgroundColor: 'grey',
-      borderRadius: 50, 
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: "absolute"
     },
 });
