@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from "react-native";
 import { Calendar } from "react-native-calendars";
-import { ScrollView } from "react-native-web";
+import { ScrollView } from "react-native";
 
 const colors = {
   background: "#f0f0f0",
@@ -84,13 +84,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#2B2B2B",
     borderBottomWidth: 3,
     borderColor: "#ED5359"
+
   },
   textHeader: {
-      color: "#FFFFFF",
-      padding: 20,
-      alignSelf: "flex-start",
-      fontSize: 30,
-      fontWeight: "700",
+    color: "#FFFFFF",
+    padding: 20,
+    alignSelf: "flex-start",
+    fontSize: 30,
+    fontWeight: "700",
   },
   containerScroll: {
     backgroundColor: colors.background,
