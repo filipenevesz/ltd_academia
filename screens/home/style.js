@@ -14,6 +14,10 @@ export const styles ={
       alignItems: 'center',
       backgroundColor: '#2B2B2B',
       padding: 15,
+      backgroundColor: "#2B2B2B",
+      borderBottomWidth: 3,
+      borderColor: "#ED5359"
+
       
     },
     headerText: {
@@ -140,6 +144,7 @@ export const styles ={
       
       
     },
+    
       
     }
     

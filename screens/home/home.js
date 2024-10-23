@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground,SafeAreaView,StatusBar } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Notifications } from "../notification/notification.js";
 import { styles } from './style.js'
@@ -12,7 +12,9 @@ export const Home = () => {
 
   return (
 
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar  barStyle="light-content" backGroundColor={'#2b2b2b'}/>
+      <ScrollView>
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
         <TouchableOpacity onPress={() => navigation.navigate(Notifications)} >
@@ -20,7 +22,7 @@ export const Home = () => {
         </TouchableOpacity>
 
       </View>
-      <Text style={styles.redline} ></Text>
+      
 
       <View style={styles.profileCard}>
         <Image source={require('../../assets/Group 5.png')}></Image>
@@ -44,9 +46,9 @@ export const Home = () => {
       </View>
 
 
-    </View>
-    //  </ScrollView >
-    // </SafeAreaView >
+    
+     </ScrollView >
+     </SafeAreaView >
   );
 
 };
