@@ -9,7 +9,7 @@ export function Notifications() {
 
   return (
     <SafeAreaView style={styles.container}>
-        <StatusBar barStyle="dark-content"/>
+        <StatusBar barStyle="light-content" backgroundColor={"#2b2b2b"}/>
         <View style={styles.header}>
             <TouchableOpacity onPress={() => navigation.goBack()} style={styles.buttonBack}>
                 <Ionicons name="arrow-back" size={30} color={"#fff"}/>

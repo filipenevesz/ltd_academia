@@ -15,11 +15,12 @@ export const styles = StyleSheet.create({
     header: {
       backgroundColor: "#2B2B2B",
       borderBottomWidth: 3,
-      borderColor: "#ED5359"
+      borderColor: "#ED5359",
+      paddingTop: 20,
     },
     notificationArea: {
         paddingHorizontal: 5,
-        paddingTop: 10,
+        padding: 10,
         flex: 1,
         backgroundColor: "#ffffff",
         alignItems: 'center',
