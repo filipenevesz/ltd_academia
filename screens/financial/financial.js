@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: "#2B2B2B",
+    borderBottomWidth: 3,
+    borderColor: "#ED5359"
   },
   textHeader: {
     color: "#FFFFFF",
@@ -28,11 +30,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     fontSize: 30,
     fontWeight: "700",
-  },
-  redLine: {
-    backgroundColor: "#ED5359",
-    width: '100%',
-    height: 2,
   },
   titleContainer: {
     flexDirection: "row",
@@ -171,7 +168,6 @@ export const Financial = () => {
 
       <View style={styles.header}>
         <Text style={styles.textHeader}>Financeiro</Text>
-        <View style={styles.redLine} />
       </View>
 
       <ScrollView contentContainerStyle={styles.container}>
