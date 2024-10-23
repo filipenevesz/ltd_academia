@@ -36,7 +36,7 @@ export const Training = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
       <View style={styles.header}>
-        <Text style={styles.textHeader}>Perfil</Text>
+        <Text style={styles.textHeader}>Treino</Text>
       </View>
       <ScrollView style={styles.containerScroll}>
         <Calendar
