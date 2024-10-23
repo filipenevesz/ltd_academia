@@ -1,8 +1,10 @@
 import React from "react";
+
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Notifications } from "../notification/notification.js";
 import { styles } from './style.js'
+
 
 export const Home = () => {
 
