@@ -28,7 +28,7 @@ function HomeStack() {
       <Stack.Screen
         name="Notifications"
         component={Notifications}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -64,6 +64,8 @@ export default function App() {
         backgroundColor="transparent"
         barStyle="light-content"
       />
+
+
 
       {!isSignedIn ? (
         <Login login={() => setisSignedIn(true)} />

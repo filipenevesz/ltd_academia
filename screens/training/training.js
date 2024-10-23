@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 
 const colors = {
   background: "#f0f0f0",

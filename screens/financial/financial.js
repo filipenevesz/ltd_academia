@@ -1,5 +1,5 @@
 import React from "react";
-import {  View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const colors = {
@@ -55,8 +55,23 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 5,
-    marginBottom: 16,
-    width: "90%",
+    marginBottom: 20,
+    width: "100%",
+    justifyContent: "center",
+  },
+  cardTwo: {
+    backgroundColor: colors.cardBackground,
+    padding: 16,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
+    marginBottom: 18,
+    width: "100%",
+    justifyContent: "center",
+
+
   },
   cardTitle: {
     fontSize: 18,
@@ -90,24 +105,28 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   primaryButton: {
-    backgroundColor: colors.primary, 
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
+    //width:160,
+    //height:40
   },
   primaryButtonText: {
     color: "#fff", // Texto em branco
     fontWeight: "bold",
   },
   mutedButton: {
-    backgroundColor: colors.primary, 
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
+
   },
   mutedButtonText: {
     color: "#fff", // Texto em branco
+
   },
   dangerButton: {
-    backgroundColor: colors.danger,
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
     marginTop: 16,
@@ -115,6 +134,7 @@ const styles = StyleSheet.create({
   dangerButtonText: {
     color: "#fff", // Texto em branco
     fontWeight: "bold",
+    textAlign: "center",
   },
   image: {
     width: 40,
@@ -152,7 +172,7 @@ export const Financial = () => {
 
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
-          <Ionicons name="person-circle" size={60} color={"#2b2b2b"}/>
+          <Ionicons name="person-circle" size={60} color={"#2b2b2b"} />
           <Text style={styles.title}> Francisco Pinto</Text>
         </View>
 
@@ -191,7 +211,7 @@ export const Financial = () => {
           </View>
         </View>
 
-        <View style={styles.card}>
+        <View style={styles.cardTwo}>
           <Text style={styles.cardTitle}>Próximo pagamento</Text>
           <View style={styles.infoRow}>
             <Text style={styles.pendingText}>Mensalidade Pendente</Text>
