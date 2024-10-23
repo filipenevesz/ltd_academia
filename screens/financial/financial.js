@@ -1,5 +1,5 @@
 import React from "react";
-import {  View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const colors = {
@@ -21,19 +21,19 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: "#2B2B2B",
-},
-textHeader: {
+  },
+  textHeader: {
     color: "#FFFFFF",
     padding: 20,
     alignSelf: "flex-start",
     fontSize: 30,
     fontWeight: "700",
-},
-redLine: {
-  backgroundColor: "#ED5359",
-  width: '100%',
-  height: 2,
-},
+  },
+  redLine: {
+    backgroundColor: "#ED5359",
+    width: '100%',
+    height: 2,
+  },
   titleContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -62,7 +62,7 @@ redLine: {
     width: "100%",
     justifyContent: "center",
   },
-  cardTwo:{
+  cardTwo: {
     backgroundColor: colors.cardBackground,
     padding: 16,
     borderRadius: 8,
@@ -108,9 +108,9 @@ redLine: {
     marginTop: 16,
   },
   primaryButton: {
-    backgroundColor: colors.primary, 
+    backgroundColor: colors.primary,
     padding: 12,
-    borderRadius:8,
+    borderRadius: 8,
     //width:160,
     //height:40
   },
@@ -119,14 +119,14 @@ redLine: {
     fontWeight: "bold",
   },
   mutedButton: {
-    backgroundColor: colors.primary, 
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
-    
+
   },
   mutedButtonText: {
     color: "#fff", // Texto em branco
-    
+
   },
   dangerButton: {
     backgroundColor: colors.primary,
@@ -171,12 +171,12 @@ export const Financial = () => {
 
       <View style={styles.header}>
         <Text style={styles.textHeader}>Financeiro</Text>
-        <View style={styles.redLine}/>
+        <View style={styles.redLine} />
       </View>
 
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
-          <Ionicons name="person-circle" size={60} color={"#2b2b2b"}/>
+          <Ionicons name="person-circle" size={60} color={"#2b2b2b"} />
           <Text style={styles.title}> Francisco Pinto</Text>
         </View>
 

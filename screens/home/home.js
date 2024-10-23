@@ -3,7 +3,6 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackg
 import { useNavigation } from "@react-navigation/native";
 import { Notifications } from "../notification/notification.js";
 import { styles } from './style.js'
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Home = () => {
 
