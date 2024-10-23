@@ -1,10 +1,10 @@
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { StatusBar } from "react-native";
+import { View, StatusBar, StyleSheet } from "react-native";
 
 // pages
 import { Home } from "./screens/home/home";
@@ -34,11 +34,23 @@ function HomeStack() {
   );
 }
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'transparent',  // Define o fundo transparente
+  },
+};
+
 export default function App() {
   const [isSignedIn, setisSignedIn] = useState(false);
 
   const screenOptions = {
+
+    animationEnabled: false,
+    headerShown: false,
     tabBarStyle: {
+      position: 'absolute',
       backgroundColor: "#2B2B2B",
       height: 100,
       width: "90%",
@@ -46,6 +58,9 @@ export default function App() {
       marginBottom: 10,
       marginLeft: "5%",
       paddingBottom: 15,
+      borderTopWidth: 0,  // Remove a borda superior da navbar
+      elevation: 0, // Remove sombras em Android
+      shadowOpacity: 0, // Remove sombras no iOS
     },
     tabBarLabelStyle: {
       fontWeight: "900",
@@ -55,67 +70,79 @@ export default function App() {
     },
     tabBarActiveTintColor: "#ED5359",
     tabBarInactiveTintColor: "white",
+
   };
 
   return (
 
-    <NavigationContainer>
+    <View style={styles.appContainer}>
+      <NavigationContainer theme={MyTheme} >
 
-      <StatusBar
-        animated={true}
-        translucent
-        backgroundColor="transparent"
-      />
+        <StatusBar
+          animated={true}
+          translucent
+          backgroundColor="transparent"
+          barStyle="light-content"
+        />
 
-      {!isSignedIn ? (
-        <Login login={() => setisSignedIn(true)} />
-      ) : (
-        <Tab.Navigator screenOptions={screenOptions}>
-          <Tab.Screen
-            name="Menu"
-            component={HomeStack}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="home" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Treino"
-            component={Training}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="barbell" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Financeiro"
-            component={Financial}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="cash" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Perfil"
-            component={Profile}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="person" color={color} size={size} />
-              ),
-            }}
-          />
+        {!isSignedIn ? (
+          <Login login={() => setisSignedIn(true)} />
+        ) : (
 
-        </Tab.Navigator>
-      )}
+          <Tab.Navigator screenOptions={screenOptions}  >
+            <Tab.Screen
+              name="Menu"
+              component={HomeStack}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="home" color={color} size={size} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Treino"
+              component={Training}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="barbell" color={color} size={size} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Financeiro"
+              component={Financial}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="cash" color={color} size={size} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Perfil"
+              component={Profile}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="person" color={color} size={size} />
+                ),
+              }}
+            />
+
+          </Tab.Navigator>
+        )}
 
 
-    </NavigationContainer>
+      </NavigationContainer>
+    </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  appContainer: {
+    flex: 1,
+    backgroundColor: 'transparent', // Define como transparente o container da aplicação
+  },
+})
