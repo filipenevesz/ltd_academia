@@ -7,7 +7,8 @@ import {
   Pressable,
   TouchableOpacity,
   SafeAreaView,
-  ScrollView
+  ScrollView,
+  StatusBar
 } from "react-native";
 import LoginImage from "../login-page/assets-login/frame-login-page.png";
 import GoogleIcon from "../login-page/assets-login/Google.png";
@@ -21,6 +22,14 @@ export const Login = ({ login }) => {
   return (
 
     <SafeAreaView style={styles.container} >
+
+      <StatusBar
+        animated={true}
+        translucent
+        backgroundColor="transparent"
+      />
+
+
       <ScrollView>
         <View style={styles.containerLogin}>
           {/*View da imagem e do texto 'Bem vindo'*/}
@@ -78,7 +87,6 @@ export const Login = ({ login }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
   },
   containerLogin: {
     flex: 1,

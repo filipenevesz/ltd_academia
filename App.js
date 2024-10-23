@@ -58,14 +58,14 @@ export default function App() {
   };
 
   return (
+
     <NavigationContainer>
+
       <StatusBar
+        animated={true}
         translucent
         backgroundColor="transparent"
-        barStyle="light-content"
       />
-
-
 
       {!isSignedIn ? (
         <Login login={() => setisSignedIn(true)} />
@@ -111,8 +111,11 @@ export default function App() {
               ),
             }}
           />
+
         </Tab.Navigator>
       )}
+
+
     </NavigationContainer>
   );
 }

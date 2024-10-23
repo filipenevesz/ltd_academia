@@ -16,7 +16,6 @@ const colors = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
     backgroundColor: colors.background,
   },
   header: {
@@ -164,7 +163,14 @@ export const Financial = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+
+      <StatusBar
+        animated={true}
+        translucent
+        backgroundColor="transparent"
+      />
+
+
 
       <View style={styles.header}>
         <Text style={styles.textHeader}>Financeiro</Text>
