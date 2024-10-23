@@ -16,17 +16,17 @@ const colors = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
     backgroundColor: colors.background,
   },
   header: {
     backgroundColor: "#2B2B2B",
     borderBottomWidth: 3,
-    borderColor: "#ED5359"
+    borderColor: "#ED5359",
+    padding: 20,
   },
   textHeader: {
     color: "#FFFFFF",
-    padding: 20,
+    paddingTop: 20,
     alignSelf: "flex-start",
     fontSize: 30,
     fontWeight: "700",

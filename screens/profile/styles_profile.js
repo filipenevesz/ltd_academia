@@ -6,14 +6,14 @@ export const styles = StyleSheet.create({
       backgroundColor: "#F3F3F3",
     },
     header: {
-        backgroundColor: "#2B2B2B",
-        borderBottomWidth: 3,
-        borderColor: "#ED5359"
+      padding: 20,
+      backgroundColor: "#2B2B2B",
+      borderBottomWidth: 3,
+      borderColor: "#ED5359"
     },
     textHeader: {
         color: "#FFFFFF",
-        padding: 20,
-        alignSelf: "flex-start",
+        paddingTop: 20,
         fontSize: 30,
         fontWeight: "700",
     },
@@ -35,7 +35,11 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       borderWidth: 51,
-      borderColor: "#2b2b2b"
+      borderColor: "#2b2b2b",
+      shadowColor: "#000",
+      shadowOpacity: 0.1,
+      shadowRadius: 10,
+      elevation: 5,
     },
     imageProfilePhoto: {
       width: 99,
@@ -52,7 +56,11 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       borderWidth: 1,
-      borderColor: "#2b2b2b"
+      borderColor: "#2b2b2b",   
+      shadowColor: "#000",
+      shadowOpacity: 1,
+      shadowRadius: 10,
+      elevation: 5,
     },
     profileTextName: {
       padding: 3,
@@ -72,10 +80,10 @@ export const styles = StyleSheet.create({
       marginHorizontal: 30,
       borderRadius: 10,
       overflow: "hidden",
-      shadowColor: '#000',
-      shadowOffset: { width: 1, height: 1 },
-      shadowOpacity: 0.5,
-      shadowRadius: 4,
+      shadowColor: "#000",
+      shadowOpacity: 0.1,
+      shadowRadius: 10,
+      elevation: 5,
     },
     textCard: {
       fontSize: 17,

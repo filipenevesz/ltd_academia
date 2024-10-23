@@ -22,6 +22,7 @@ export function Profile() {
   };
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor={"#2B2B2B"}/>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
       </View>
