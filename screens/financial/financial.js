@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  Image,
-  SafeAreaView, 
-  StatusBar, 
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const colors = {
   background: "#f0f0f0",
@@ -27,6 +18,21 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: colors.background,
+  },
+  header: {
+    backgroundColor: "#2B2B2B",
+  },
+  textHeader: {
+    color: "#FFFFFF",
+    padding: 20,
+    alignSelf: "flex-start",
+    fontSize: 30,
+    fontWeight: "700",
+  },
+  redLine: {
+    backgroundColor: "#ED5359",
+    width: '100%',
+    height: 2,
   },
   titleContainer: {
     flexDirection: "row",
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
   },
-  cardTwo:{
+  cardTwo: {
     backgroundColor: colors.cardBackground,
     padding: 16,
     borderRadius: 8,
@@ -102,9 +108,9 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   primaryButton: {
-    backgroundColor: colors.primary, 
+    backgroundColor: colors.primary,
     padding: 12,
-    borderRadius:8,
+    borderRadius: 8,
     //width:160,
     //height:40
   },
@@ -113,14 +119,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   mutedButton: {
-    backgroundColor: colors.primary, 
+    backgroundColor: colors.primary,
     padding: 12,
     borderRadius: 8,
-    
+
   },
   mutedButtonText: {
     color: "#fff", // Texto em branco
-    
+
   },
   dangerButton: {
     backgroundColor: colors.primary,
@@ -162,13 +168,16 @@ export const Financial = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+
+      <View style={styles.header}>
+        <Text style={styles.textHeader}>Financeiro</Text>
+        <View style={styles.redLine} />
+      </View>
+
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
-          <Image
-            style={styles.image}
-            source={require("../../assets/favicon.png")}
-          />
-          <Text style={styles.title}>Francisco Pinto</Text>
+          <Ionicons name="person-circle" size={60} color={"#2b2b2b"} />
+          <Text style={styles.title}> Francisco Pinto</Text>
         </View>
 
         <View style={styles.titleContainer}>

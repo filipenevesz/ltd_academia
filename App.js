@@ -1,5 +1,6 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -10,9 +11,28 @@ import { Home } from "./screens/home/home";
 import { Financial } from "./screens/financial/financial";
 import { Profile } from "./screens/profile/profile";
 import { Training } from "./screens/training/training";
-import {Login} from "./screens/login-page/login";
+import { Notifications } from "./screens/notification/notification";
+import Login from "./screens/login-page/login";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function HomeStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   const [isSignedIn, setisSignedIn] = useState(false);
@@ -45,13 +65,15 @@ export default function App() {
         barStyle="light-content"
       />
 
+
+
       {!isSignedIn ? (
         <Login login={() => setisSignedIn(true)} />
       ) : (
         <Tab.Navigator screenOptions={screenOptions}>
           <Tab.Screen
             name="Menu"
-            component={Home}
+            component={HomeStack}
             options={{
               headerShown: false,
               tabBarIcon: ({ color, size }) => (
