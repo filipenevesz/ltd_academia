@@ -1,23 +1,46 @@
-import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView, StatusBar } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, SafeAreaView, StatusBar, Alert, Image  } from 'react-native';
 import { styles } from './styles_profile'
+import gaybriel2 from './assets_profile/gaybriel2.png';
 import { Ionicons } from "@expo/vector-icons";
 import React from 'react'
 
 export function Profile() {
+  const ViewPhotoProfile = () => {
+    Alert.alert("Ver foto do perfil");
+  };
+
+  const ChangePhotoProfile = () => {
+    Alert.alert("Mudar foto do perfil");
+  };
+
+  const EditInfos = () => {
+    Alert.alert("Editar suas informações");
+  };
+  
+  const ViewInfos = () => {
+    Alert.alert("Ver sua ficha");
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
-        {/* <View style={styles.redLine}/> */}
       </View>
 
       <ScrollView style={styles.container}>
       <View style={styles.profile}>
           <View style={styles.profileContainer}>
-            <View style={styles.profilePhoto}>
-              <Ionicons name="person-circle" size={120} color={"#ffffff"}/>
-            </View>
-            <TouchableOpacity style={styles.profilePhotoChange}>
+            <TouchableOpacity 
+              style={styles.profilePhoto}
+              onPress={ViewPhotoProfile}
+              accessibilityLabel={"Ver sua foto de perfil"}
+            >
+              <Image style={styles.imageProfilePhoto} source={gaybriel2}/>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              style={styles.profilePhotoChange}
+              onPress={ChangePhotoProfile}
+              accessibilityLabel={"Mudar sua foto de perfil"}  
+            >
               <Ionicons name="camera-reverse" size={20} color={"#ffffff"}/>
             </TouchableOpacity>
         </View>
@@ -54,10 +77,17 @@ export function Profile() {
       </View>
 
       <View style={styles.buttons}>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          style={styles.buttonStyle}
+          onPress={EditInfos}
+          accessibilityLabel={"Editar suas informações"}
+        >
           <Text style={styles.buttonText} >Editar perfil</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          style={styles.buttonStyle}
+          onPress={ViewInfos}
+          accessibilityLabel={"Ver suas informações"}>
           <Text style={styles.buttonText}>Visualizar ficha</Text>
         </TouchableOpacity>
       </View>

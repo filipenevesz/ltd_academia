@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from "react-native";
 import { Calendar } from "react-native-calendars";
-import { ScrollView } from "react-native-web";
+import { ScrollView } from "react-native";
 
 const colors = {
   background: "#f0f0f0",
@@ -36,7 +36,7 @@ export const Training = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
       <View style={styles.header}>
-        <Text style={styles.textHeader}>Perfil</Text>
+        <Text style={styles.textHeader}>Treino</Text>
       </View>
       <ScrollView style={styles.containerScroll}>
         <Calendar

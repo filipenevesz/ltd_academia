@@ -34,17 +34,25 @@ export const styles = StyleSheet.create({
       borderRadius: 50, 
       justifyContent: 'center',
       alignItems: 'center',
+      borderWidth: 51,
+      borderColor: "#2b2b2b"
+    },
+    imageProfilePhoto: {
+      width: 99,
+      height: 99,
     },
     profilePhotoChange: {
       width: 30,
       height: 30,
-      backgroundColor: '#2b2b2b',
+      backgroundColor: '#ED5359',
       borderRadius: 50, 
       position: 'absolute',
       bottom: 3, 
       right: 3, 
       justifyContent: 'center',
       alignItems: 'center',
+      borderWidth: 1,
+      borderColor: "#2b2b2b"
     },
     profileTextName: {
       padding: 3,
@@ -55,7 +63,7 @@ export const styles = StyleSheet.create({
       fontSize: 20,
       paddingTop: 50,
       paddingLeft: 30,
-      fontWeight: '100',
+      fontWeight: '400',
     },
     card: {
       padding: 10,

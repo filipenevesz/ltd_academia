@@ -1,6 +1,5 @@
 import { Text, View, ScrollView, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Home } from '../home/home';
 import { styles } from './styles_notification';
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
@@ -12,7 +11,7 @@ export function Notifications() {
     <SafeAreaView style={styles.container}>
         <StatusBar barStyle="dark-content"/>
         <View style={styles.header}>
-            <TouchableOpacity onPress={() => navigation.goBack(Home)} style={styles.buttonBack}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.buttonBack}>
                 <Ionicons name="arrow-back" size={30} color={"#fff"}/>
                 <Text style={styles.textHeader}>Notificações</Text>
             </TouchableOpacity>
