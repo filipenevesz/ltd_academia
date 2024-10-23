@@ -16,7 +16,6 @@ export function Notifications() {
                 <Ionicons name="arrow-back" size={30} color={"#fff"}/>
                 <Text style={styles.textHeader}>Notificações</Text>
             </TouchableOpacity>
-            <View style={styles.redLine}/>
         </View>
 
         <ScrollView contentContainerStyle={styles.scrollViewContainer}>

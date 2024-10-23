@@ -8,7 +8,7 @@ export function Profile() {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
-        <View style={styles.redLine}/>
+        {/* <View style={styles.redLine}/> */}
       </View>
 
       <ScrollView style={styles.container}>
@@ -24,7 +24,7 @@ export function Profile() {
         <Text style={styles.profileTextName}>Francisco Pinto</Text>
           <View style={styles.addressContainer}>
             <Ionicons name="call" size={15} color={"#2B2B2B"}/>
-        <Text>(99) 9 9999-9999</Text>
+        <Text> (99) 9 9999-9999</Text>
           </View>
           <View style={styles.addressContainer}>
             <Ionicons name="location" size={15} color={"#ED5359"}/>

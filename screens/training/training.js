@@ -37,7 +37,6 @@ export const Training = () => {
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
       <View style={styles.header}>
         <Text style={styles.textHeader}>Perfil</Text>
-        <View style={styles.redLine}/>
       </View>
       <ScrollView style={styles.containerScroll}>
         <Calendar
@@ -81,8 +80,10 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.background,
   },
-    header: {
-      backgroundColor: "#2B2B2B",
+  header: {
+    backgroundColor: "#2B2B2B",
+    borderBottomWidth: 3,
+    borderColor: "#ED5359"
   },
   textHeader: {
       color: "#FFFFFF",
@@ -90,11 +91,6 @@ const styles = StyleSheet.create({
       alignSelf: "flex-start",
       fontSize: 30,
       fontWeight: "700",
-  },
-  redLine: {
-    backgroundColor: "#ED5359",
-    width: '100%',
-    height: 2,
   },
   containerScroll: {
     backgroundColor: colors.background,
