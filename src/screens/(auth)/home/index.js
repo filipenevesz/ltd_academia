@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
+
+
 import { styles } from './style.js'
 
 
@@ -9,13 +11,13 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
-        <TouchableOpacity><Image source={require('../../assets/Frame.png')}></Image></TouchableOpacity>
+        {/* <TouchableOpacity><Image source={require('../../assets/images/icon_bell.png')}></Image></TouchableOpacity> */}
 
       </View>
       <Text style={styles.redline} ></Text>
 
       <View style={styles.profileCard}>
-        <Image source={require('../../assets/Group 5.png')}></Image>
+        {/* <Image source={require('../../assets/images/ex_card.png')}></Image> */}
         <Text style={styles.texto}>Bom dia! </Text>
         <Text style={styles.textAbaixo}>Francisco Pinto</Text>
 
@@ -24,7 +26,7 @@ export default function HomeScreen() {
 
   
         <View style={styles.card}>
-          <ImageBackground style={styles.imagem} source={require('../../assets/Group.png')}></ImageBackground>
+          {/* <ImageBackground style={styles.imagem} source={require('../../assets/images/ex_card.png')}></ImageBackground> */}
           <Text style={styles.cardTitle}>Quinta-feira</Text>
           <Text style={styles.underline}></Text>
           <Text style={styles.cardSubtitle}>Dia de Treino!</Text>
@@ -36,6 +38,7 @@ export default function HomeScreen() {
 
 
     </View>
+
   );
 }
 

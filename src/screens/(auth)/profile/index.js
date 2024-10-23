@@ -1,5 +1,5 @@
 import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView, StatusBar } from 'react-native';
-import { styles } from './styles_profile'
+import { styles } from './styles'
 import { Ionicons } from "@expo/vector-icons";
 import React from 'react'
 
