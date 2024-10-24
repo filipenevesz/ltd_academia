@@ -7,12 +7,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { View, StatusBar, StyleSheet } from "react-native";
 
 // pages
-import { Home } from "./screens/home/home";
-import { Financial } from "./screens/financial/financial";
-import { Profile } from "./screens/profile/profile";
-import { Training } from "./screens/training/training";
-import { Notifications } from "./screens/notification/notification";
-import Login from "./screens/login-page/login";
+import HomeScreen from "./src/screens/(auth)/home"
+import Financial from "./src/screens/(auth)/financial";
+import Profile from "./src/screens/(auth)/profile";
+import Training from "./src/screens/(auth)/workout";
+import Notifications from "./src/screens/(auth)/notification";
+import Login from "./src/screens/(public)/login";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -22,7 +22,7 @@ function HomeStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={Home}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -43,7 +43,7 @@ const MyTheme = {
 };
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(false);
+  const [isSignedIn, setisSignedIn] = useState(true);
 
   const screenOptions = {
 
