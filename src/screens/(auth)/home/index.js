@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import Header from '../../../components/header';
-
 import styles from './styles';
-
 
 export default function HomeScreen() {
   return (

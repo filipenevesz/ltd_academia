@@ -7,16 +7,18 @@ const styles = StyleSheet.create({
     },
     textHeader: {
         color: "#FFFFFF",
-        padding: 20,
         alignSelf: "flex-start",
-        fontSize: 30,
-        fontWeight: "700"
+        fontSize: 20,
+        fontWeight: "700",
+        width: 200,
+        paddingLeft: 10
     },
     header: {
       backgroundColor: "#2B2B2B",
       borderBottomWidth: 3,
       borderColor: "#ED5359",
-      paddingTop: 20,
+      paddingTop: 50,
+      padding: 20,
     },
     notificationArea: {
         paddingHorizontal: 5,
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
       buttonBack: {
         flexDirection: 'row',
         alignItems: 'center',
-        left: 10,
+        
       }
       
 });

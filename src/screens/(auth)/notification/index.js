@@ -13,7 +13,7 @@ export default function Notifications() {
         <StatusBar barStyle="dark-content"/>
         <View style={styles.header}>
             <TouchableOpacity onPress={() => navigation.goBack(HomeScreen)} style={styles.buttonBack}>
-                <Ionicons name="arrow-back" size={30} color={"#fff"}/>
+                <Ionicons name="arrow-back" size={25} color={"#fff"}/>
                 <Text style={styles.textHeader}>Notificações</Text>
             </TouchableOpacity>
         </View>
