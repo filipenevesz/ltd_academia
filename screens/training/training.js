@@ -33,7 +33,12 @@ export const Training = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+      <StatusBar
+        animated={true}
+        translucent
+        backgroundColor="transparent"
+      />
+
       <View style={styles.header}>
         <Text style={styles.textHeader}>Treino</Text>
       </View>

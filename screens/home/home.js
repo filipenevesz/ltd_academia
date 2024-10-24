@@ -1,6 +1,5 @@
 import React from "react";
-
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, StatusBar } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Notifications } from "../notification/notification.js";
 import { styles } from './style.js'
@@ -13,6 +12,13 @@ export const Home = () => {
   return (
 
     <View style={styles.container}>
+
+      <StatusBar
+        animated={true}
+        translucent
+        backgroundColor="transparent"
+      />
+
       <View style={styles.header}>
         <Text style={styles.headerText}>Início</Text>
         <TouchableOpacity onPress={() => navigation.navigate(Notifications)} >
