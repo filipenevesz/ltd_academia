@@ -3,9 +3,11 @@ import { View, Text, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, S
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../styles/colors";
 import styles from "./styles";
+import Header from "../../../components/header";
+import Button from "../../../components/button";
 
 
-export const Financial = () => {
+export default function Financial() {
   const handleViewInfo = () => {
     Alert.alert("Viewing information");
   };
@@ -20,11 +22,17 @@ export const Financial = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+
+      <Header
+        title="Financeiro"
+      />
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
 
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Text style={styles.textHeader}>Financeiro</Text>
-      </View>
+      </View> */}
+
+
 
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
@@ -50,20 +58,19 @@ export const Financial = () => {
           </View>
           <Text style={styles.mutedText}>Pagamento efetuado em 21/Set</Text>
           <View style={styles.buttonRow}>
-            <TouchableOpacity
-              style={styles.primaryButton}
-              onPress={handleViewInfo}
-              accessibilityLabel="View information"
-            >
-              <Text style={styles.primaryButtonText}>Ver informações</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.mutedButton}
-              onPress={handlePaymentHistory}
-              accessibilityLabel="View payment history"
-            >
-              <Text style={styles.mutedButtonText}>Histórico de pag.</Text>
-            </TouchableOpacity>
+            <View style = {styles.buttons}>
+              <Button
+                title="Ver informações"
+                onPress={()=>alert("ADICIONAR ESTA FUNCIONALIDADE")}
+              />
+              <Button
+                title="Histórico de pag."
+                onPress={()=>alert("ADICIONAR ESTA FUNCIONALIDADE")}
+              />
+            </View>
+
+
+
           </View>
         </View>
 
@@ -74,13 +81,19 @@ export const Financial = () => {
             <Text style={styles.amount}>R$150,00</Text>
           </View>
           <Text style={styles.mutedText}>Vencimento em 21/Out</Text>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.dangerButton}
             onPress={handleMakePayment}
             accessibilityLabel="Make payment"
           >
             <Text style={styles.dangerButtonText}>Efetuar pagamento</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <Button
+          style = {styles.dangerButton}
+          onPress={()=>alert("ADICIONAR ESTA FUNCIONALIDADE")}
+            accessibilityLabel="Make payment"
+            title="Efetuar pagamento"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

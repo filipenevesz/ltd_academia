@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from "react-native";
-import { Calendar } from "react-native-calendars";
+import { View, Text, SafeAreaView, StatusBar } from "react-native";
+import { Calendar, WeekCalendar  } from "react-native-calendars";
 import { ScrollView } from "react-native";
 import { colors } from "../../../styles/colors";
+import styles from "./styles";
+import Header from "../../../components/header";
+import Button from "../../../components/button";
 
-export const Training = () => {
+
+
+
+export default function WorkoutScreen() {
   const [selectedDate, setSelectedDate] = useState("");
 
   // Dados fictícios para os treinos
@@ -28,11 +34,14 @@ export const Training = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
-      <View style={styles.header}>
-        <Text style={styles.textHeader}>Treino</Text>
-      </View>
+
+      <Header
+        title="Treino"
+      />
+
       <ScrollView style={styles.containerScroll}>
         <Calendar
+        style={styles.calender}
           onDayPress={(day) => setSelectedDate(day.dateString)}
           markedDates={markedDates}
           theme={{
@@ -55,17 +64,18 @@ export const Training = () => {
           </Text>
         </View>
         <View style={styles.buttons}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Gerenciar o treino</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Visualizar o treino</Text>
-          </TouchableOpacity>
+ 
+          <Button
+            title="Gerenciar o treino"
+            onPress={() => alert("Implementar Isso")}
+          />
+          <Button
+            title="Gerenciar o treino"
+            onPress={() => alert("Implementar Isso")}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-
-export default Training;

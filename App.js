@@ -7,11 +7,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
 
 // pages
-import { HomeScreen } from "./src/screens/(auth)/home"
-import { Financial } from "./src/screens/(auth)/financial";
-import { Profile } from "./src/screens/(auth)/profile";
-import { Training } from "./src/screens/(auth)/workout";
-import { Notifications } from "./src/screens/(auth)/notification";
+import HomeScreen from "./src/screens/(auth)/home"
+import Financial from "./src/screens/(auth)/financial";
+import Profile from "./src/screens/(auth)/profile";
+import Training from "./src/screens/(auth)/workout";
+import Notifications from "./src/screens/(auth)/notification";
 import Login from "./src/screens/(public)/login";
 
 const Tab = createBottomTabNavigator();
@@ -35,7 +35,7 @@ function HomeStack() {
 }
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(false);
+  const [isSignedIn, setisSignedIn] = useState(true);
 
   const screenOptions = {
     tabBarStyle: {

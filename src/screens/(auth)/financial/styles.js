@@ -4,21 +4,9 @@ import { colors } from "../../../styles/colors";
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 16,
       backgroundColor: colors.background,
     },
-    header: {
-      backgroundColor: "#2B2B2B",
-      borderBottomWidth: 3,
-      borderColor: "#ED5359"
-    },
-    textHeader: {
-      color: "#FFFFFF",
-      padding: 20,
-      alignSelf: "flex-start",
-      fontSize: 30,
-      fontWeight: "700",
-    },
+
     titleContainer: {
       flexDirection: "row",
       alignItems: "center",
@@ -92,27 +80,11 @@ import { colors } from "../../../styles/colors";
       justifyContent: "space-between",
       marginTop: 16,
     },
-    primaryButton: {
-      backgroundColor: colors.primary,
-      padding: 12,
-      borderRadius: 8,
-      //width:160,
-      //height:40
-    },
-    primaryButtonText: {
-      color: "#fff", // Texto em branco
-      fontWeight: "bold",
-    },
-    mutedButton: {
-      backgroundColor: colors.primary,
-      padding: 12,
-      borderRadius: 8,
-  
-    },
-    mutedButtonText: {
-      color: "#fff", // Texto em branco
-  
-    },
+    buttons :{
+      gap:10,
+      width:"100%",
+
+         },
     dangerButton: {
       backgroundColor: colors.primary,
       padding: 12,

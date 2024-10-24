@@ -4,21 +4,15 @@ import { colors } from "../../../styles/colors";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 20,
       backgroundColor: colors.background,
     },
-    header: {
-      backgroundColor: "#2B2B2B",
-      borderBottomWidth: 3,
-      borderColor: "#ED5359"
-  
-    },
-    textHeader: {
-      color: "#FFFFFF",
-      padding: 20,
-      alignSelf: "flex-start",
-      fontSize: 30,
-      fontWeight: "700",
+    calender:{
+      margin:10,
+      borderRadius: 5,
+      shadowColor: "#000",
+      shadowOpacity: 0.1,
+      shadowRadius: 10,
+      elevation:5
     },
     containerScroll: {
       backgroundColor: colors.background,
@@ -46,8 +40,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
       marginHorizontal: 17,
-      flexDirection: "row",
-      justifyContent: "center", // Centraliza os botões horizontalmente
+
+      justifyContent: "center", // Centraliza os botões 
+      gap:10
     },
     button: {
       backgroundColor: colors.primary,
@@ -62,3 +57,5 @@ const styles = StyleSheet.create({
       textAlign: "center",
     },
   });
+
+  export default styles

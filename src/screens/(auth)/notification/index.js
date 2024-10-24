@@ -1,11 +1,11 @@
 import { Text, View, ScrollView, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import {HomeScreen} from '../home';
-import { styles } from './styles';
+import HomeScreen from '../home';
+import  styles  from './styles';
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 
-export function Notifications() {
+export default function Notifications() {
     const navigation = useNavigation();
 
   return (

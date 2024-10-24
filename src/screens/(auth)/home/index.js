@@ -1,30 +1,18 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import Header from '../../../components/header';
 
-
-import { styles } from './style.js'
-
+import styles from './styles';
 
 
 export default function HomeScreen() {
   return (
+    
+
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Início</Text>
-        {/* <TouchableOpacity><Image source={require('../../assets/images/icon_bell.png')}></Image></TouchableOpacity> */}
-
-      </View>
-      <Text style={styles.redline} ></Text>
-
-      <View style={styles.profileCard}>
-        {/* <Image source={require('../../assets/images/ex_card.png')}></Image> */}
-        <Text style={styles.texto}>Bom dia! </Text>
-        <Text style={styles.textAbaixo}>Francisco Pinto</Text>
-
-      </View>
-      
-
-  
+      <Header 
+      title = "Inicio"
+      />
         <View style={styles.card}>
           {/* <ImageBackground style={styles.imagem} source={require('../../assets/images/ex_card.png')}></ImageBackground> */}
           <Text style={styles.cardTitle}>Quinta-feira</Text>

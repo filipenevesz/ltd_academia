@@ -11,6 +11,7 @@ import {
 import LoginImage from "./assets-login/frame-login-page.png";
 import GoogleIcon from "./assets-login/Google.png";
 import { useState } from "react";
+import styles from "./styles";
 
 // useState para o hover:
 export const Login = ({ login }) => {
