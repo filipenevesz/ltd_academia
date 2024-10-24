@@ -34,10 +34,14 @@ export const Training = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
+      <StatusBar
+        animated={true}
+        translucent
+        backgroundColor="transparent"
+      />
+
       <View style={styles.header}>
-        <Text style={styles.textHeader}>Perfil</Text>
-        <View style={styles.redLine} />
+        <Text style={styles.textHeader}>Treino</Text>
       </View>
       <ScrollView style={styles.containerScroll}>
         <Calendar
@@ -78,11 +82,13 @@ export const Training = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: colors.background,
   },
   header: {
     backgroundColor: "#2B2B2B",
+    borderBottomWidth: 3,
+    borderColor: "#ED5359"
+
   },
   textHeader: {
     color: "#FFFFFF",
@@ -90,11 +96,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     fontSize: 30,
     fontWeight: "700",
-  },
-  redLine: {
-    backgroundColor: "#ED5359",
-    width: '100%',
-    height: 2,
   },
   containerScroll: {
     backgroundColor: colors.background,

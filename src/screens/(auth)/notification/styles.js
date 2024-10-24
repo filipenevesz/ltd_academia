@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#2B2B2B",
@@ -12,10 +12,10 @@ export const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "700"
     },
-    redLine: {
-        backgroundColor: "#ED5359",
-        width: "100%",
-        height: 2,
+    header: {
+      backgroundColor: "#2B2B2B",
+      borderBottomWidth: 3,
+      borderColor: "#ED5359"
     },
     notificationArea: {
         paddingHorizontal: 5,
@@ -61,3 +61,6 @@ export const styles = StyleSheet.create({
       }
       
 });
+
+
+export default styles;
