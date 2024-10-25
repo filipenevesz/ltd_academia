@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "700",
         width: 200,
-        paddingLeft: 10
+        paddingLeft: 10,
     },
     header: {
       backgroundColor: "#2B2B2B",
