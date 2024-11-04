@@ -35,7 +35,7 @@ function HomeStack() {
 }
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(true);
+  const [isSignedIn, setisSignedIn] = useState(false);
 
   const screenOptions = {
     tabBarStyle: {
