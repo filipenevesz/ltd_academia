@@ -43,7 +43,7 @@ const MyTheme = {
 };
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(false); d
+  const [isSignedIn, setisSignedIn] = useState(false);
   // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
   const [isUserType, setisUserType] = useState(0)
 
