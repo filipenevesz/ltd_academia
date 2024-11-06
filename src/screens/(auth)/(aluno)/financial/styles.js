@@ -5,6 +5,7 @@ import { colors } from "../../../../styles/colors";
     container: {
       flex: 1,
       backgroundColor: colors.background,
+      
     },
 
     titleContainer: {

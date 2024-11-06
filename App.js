@@ -1,6 +1,5 @@
 import * as React from "react";
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -16,7 +15,7 @@ const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'transparent',  // Define o fundo transparente
+    background: 'transparent',
   },
 };
 
@@ -26,31 +25,27 @@ export default function App() {
   const [isUserType, setisUserType] = useState(0)
 
   const screenOptions = {
-
     animationEnabled: false,
     headerShown: false,
     tabBarStyle: {
       position: 'absolute',
       backgroundColor: "#2B2B2B",
-      height: 100,
-      width: "90%",
-      borderRadius: 10,
-      marginBottom: 10,
-      marginLeft: "5%",
-      paddingBottom: 15,
+      height: 75,
+      width: "100%",
+      
+      paddingBottom: 5,
       borderTopWidth: 0,  // Remove a borda superior da navbar
       elevation: 0, // Remove sombras em Android
       shadowOpacity: 0, // Remove sombras no iOS
     },
     tabBarLabelStyle: {
       fontWeight: "900",
-      fontSize: 15,
+      fontSize: 12,
       tabBarActiveTintColor: "#ED5359",
       tabBarInactiveTintColor: "white",
     },
     tabBarActiveTintColor: "#ED5359",
     tabBarInactiveTintColor: "white",
-
   };
 
   return (
@@ -63,11 +58,11 @@ export default function App() {
       </NavigationContainer>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: 'transparent', // Define como transparente o container da aplicação
+    backgroundColor: 'transparent',
   },
-})
+});
