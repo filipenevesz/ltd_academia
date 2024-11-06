@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ImageBackground } from 'react-native';
-import Header from '../../../components/header';
+import Header from '../../../../components/header';
 
 
 import styles from './styles';
@@ -14,7 +14,7 @@ export default function HomeScreen() {
         title="Início"
       />
       <Text style={styles.barra}></Text>
-      <Image style={styles.perfil} source={require('../../../assets/images/defalt_profile.png')} />
+      <Image style={styles.perfil} source={require('../../../../assets/images/defalt_profile.png')} />
       <Text style={styles.nome}>
         Bom dia!{'\n'}
         Francisco Pinto</Text>
@@ -24,7 +24,7 @@ export default function HomeScreen() {
 
 
       <View style={styles.card}>
-        <ImageBackground style={styles.imagem} source={require('../../../assets/images/ex_card.png')}></ImageBackground>
+        <ImageBackground style={styles.imagem} source={require('../../../../assets/images/ex_card.png')}></ImageBackground>
         <Text style={styles.cardTitle}>Quinta-feira</Text>
         {/* <Text style={styles.underline}></Text> */}
         <Text style={styles.cardSubtitle}>Dia de Treino!</Text>

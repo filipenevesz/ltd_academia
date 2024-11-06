@@ -2,8 +2,8 @@ import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView, StatusBa
 import styles from './styles'
 import { Ionicons } from "@expo/vector-icons";
 import React from 'react'
-import Button from '../../../components/button';
-import Header from '../../../components/header';
+import Button from '../../../../components/button';
+import Header from '../../../../components/header';
 
 export default function Profile() {
   return (

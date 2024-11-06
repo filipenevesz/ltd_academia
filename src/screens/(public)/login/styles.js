@@ -4,11 +4,13 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      height: "100%",
     },
     containerLogin: {
       flex: 1,
       backgroundColor: "#2B2B2B",
       alignItems: "center",
+      height: "100%",
     },
     header: {
       marginTop: 60,

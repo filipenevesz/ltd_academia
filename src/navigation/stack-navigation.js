@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "../screens/(auth)/home";
-import Notifications from "../screens/(auth)/notification";
+import HomeScreen from "../screens/(auth)/(aluno)/home";
+import Notifications from "../screens/(auth)/(aluno)/notification";
 
 const Stack = createStackNavigator();
 

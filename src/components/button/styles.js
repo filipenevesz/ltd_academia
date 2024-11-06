@@ -13,6 +13,7 @@ const styles = StyleSheet.create(
             gap: 7,
             padding: 10,
             borderRadius: 6,
+            marginTop: 10,
         },
         icon: {
             color: "#ffff",

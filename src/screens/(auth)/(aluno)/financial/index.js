@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, ScrollView, Alert, Image, SafeAreaView, StatusBar, } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { colors } from "../../../styles/colors";
+import { colors } from "../../../../styles/colors";
 import styles from "./styles";
-import Header from "../../../components/header";
-import Button from "../../../components/button";
+import Header from "../../../../components/header";
+import Button from "../../../../components/button";
 
 
 export default function Financial() {
@@ -43,7 +43,7 @@ export default function Financial() {
         <View style={styles.titleContainer}>
           <Image
             style={styles.moneyImage}
-            source={require("../../../assets/images/money.jpeg")}
+            source={require("../../../../assets/images/money.jpeg")}
           />
           <Text style={styles.subtitle}>Plano mensal</Text>
         </View>

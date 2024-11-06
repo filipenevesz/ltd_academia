@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { View, Text, SafeAreaView, StatusBar } from "react-native";
 import { Calendar, WeekCalendar } from "react-native-calendars";
 import { ScrollView } from "react-native";
-import { colors } from "../../../styles/colors";
+import { colors } from "../../../../styles/colors";
 import styles from "./styles";
-import Header from "../../../components/header";
-import Button from "../../../components/button";
-import Card from "../../../components/card";
+import Header from "../../../../components/header";
+import Button from "../../../../components/button";
+import Card from "../../../../components/card";
 
 export default function WorkoutScreen() {
   const [selectedDate, setSelectedDate] = useState("");

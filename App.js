@@ -7,9 +7,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { View, StatusBar, StyleSheet } from "react-native";
 
 // pages
-import Financial from "./src/screens/(auth)/financial";
-import Profile from "./src/screens/(auth)/profile";
-import Training from "./src/screens/(auth)/workout";
+import Financial from "./src/screens/(auth)/(aluno)/financial";
+import Profile from "./src/screens/(auth)/(aluno)/profile";
+import Training from "./src/screens/(auth)/(aluno)/workout";
 import Login from "./src/screens/(public)/login";
 import HomeStack from "./src/navigation/stack-navigation";
 
