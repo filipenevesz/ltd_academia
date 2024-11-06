@@ -35,6 +35,11 @@ export const Login = ({ login }) => {
     };
   }, []);
 
+  const onSubmit = async (data) => {
+    console.log(data);
+    login();
+  };
+
   return (
 
     <SafeAreaView style={styles.container}>
@@ -49,7 +54,9 @@ export const Login = ({ login }) => {
             <Text style={styles.textLogin}>Bem-vindo(a)!</Text>
           </View>
           {/*Formulario de login*/}
-          <LoginForm />
+          <LoginForm
+          onSubmit={onSubmit}
+          />
         </View>
 
     </SafeAreaView>

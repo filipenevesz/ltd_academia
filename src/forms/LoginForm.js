@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import FormBase from "./FormBase"
 
-const LoginForm = () => {
+
+const LoginForm = ({onSubmit}) => {
+    const navigation = useNavigation();
     const fields = [
         {
             name: "email",
@@ -17,9 +20,7 @@ const LoginForm = () => {
        
     ];
 
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+    
 
     return <FormBase fields={fields} onSubmit={onSubmit} buttonTitle="Entrar"/>;
 }
