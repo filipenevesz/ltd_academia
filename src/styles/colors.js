@@ -7,5 +7,6 @@ export const colors = {
     danger: "#dc3545",
     primary: "#ED5359", // Cor dos botões
     muted: "#6c757d",
+    backgroundTab: "#2B2B2B",
   };
 

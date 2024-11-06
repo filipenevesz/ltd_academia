@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: colors.background,
+      marginBottom:80,
     },
     calender:{
       margin:10,

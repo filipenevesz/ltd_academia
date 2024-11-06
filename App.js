@@ -6,12 +6,9 @@ import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { View, StatusBar, StyleSheet } from "react-native";
 
-// pages
-import Financial from "./src/screens/(auth)/(aluno)/financial";
-import Profile from "./src/screens/(auth)/(aluno)/profile";
-import Training from "./src/screens/(auth)/(aluno)/workout";
-import Login from "./src/screens/(public)/login";
-import HomeStack from "./src/navigation/stack-navigation";
+import AuthNavigation from "./src/navigation/AuthNavigation";
+import AlunoNavigation from "./src/navigation/AlunoNavigation";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -24,7 +21,7 @@ const MyTheme = {
 };
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(false);
+  const [isSignedIn, setisSignedIn] = useState(true);
   // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
   const [isUserType, setisUserType] = useState(0)
 
@@ -57,69 +54,12 @@ export default function App() {
   };
 
   return (
-
     <View style={styles.appContainer}>
       <NavigationContainer theme={MyTheme} >
-
-        <StatusBar
-          animated={true}
-          translucent
-          backgroundColor="transparent"
-          barStyle="light-content"
-        />
-
-        {!isSignedIn ? (
-          <Login login={() => setisSignedIn(true)} />
-        ) : (
-
-          <Tab.Navigator screenOptions={screenOptions}  >
-            <Tab.Screen
-              name="Menu"
-              component={HomeStack}
-              options={{
-                headerShown: false,
-                tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="home" color={color} size={size} />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name="Treino"
-              component={Training}
-              options={{
-                headerShown: false,
-                tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="barbell" color={color} size={size} />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name="Financeiro"
-              component={Financial}
-              options={{
-                headerShown: false,
-                tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="cash" color={color} size={size} />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name="Perfil"
-              component={Profile}
-              options={{
-                headerShown: false,
-                tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="person" color={color} size={size} />
-                ),
-              }}
-            />
-
-          </Tab.Navigator>
-        )
-
-        }
-
-
+        {!isSignedIn ?
+        (<AuthNavigation onLogin={() => setisSignedIn(true)} />) :
+        (<AlunoNavigation isUserType={isUserType} />)
+      }
       </NavigationContainer>
     </View>
   );

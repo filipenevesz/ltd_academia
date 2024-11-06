@@ -11,7 +11,7 @@ const styles = StyleSheet.create(
             justifyContent: "center",
             backgroundColor: colors.primary,
             gap: 7,
-            padding: 10,
+            padding: 15,
             borderRadius: 6,
             marginTop: 10,
         },
@@ -22,7 +22,7 @@ const styles = StyleSheet.create(
         title: {
             textAlign: "center",
             fontWeight: 'bold',
-            fontSize: 16,
+            fontSize: 20,
             color: '#fff'
         }
 
