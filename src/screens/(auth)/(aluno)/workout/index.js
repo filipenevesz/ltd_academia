@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, SafeAreaView, StatusBar } from "react-native";
-import { Calendar, WeekCalendar  } from "react-native-calendars";
+import { Calendar, WeekCalendar } from "react-native-calendars";
 import { ScrollView } from "react-native";
-import { colors } from "../../../styles/colors";
+import { colors } from "../../../../styles/colors";
 import styles from "./styles";
-import Header from "../../../components/header";
-import Button from "../../../components/button";
-
-
-
+import Header from "../../../../components/header";
+import Button from "../../../../components/button";
+import Card from "../../../../components/card";
 
 export default function WorkoutScreen() {
   const [selectedDate, setSelectedDate] = useState("");
@@ -39,9 +37,9 @@ export default function WorkoutScreen() {
         title="Treino"
       />
 
-      <ScrollView style={styles.containerScroll}>
+      <ScrollView style={styles.containerScroll} contentContainerStyle={{ paddingBottom: 20 }}>
         <Calendar
-        style={styles.calender}
+          style={styles.calender}
           onDayPress={(day) => setSelectedDate(day.dateString)}
           markedDates={markedDates}
           theme={{
@@ -57,6 +55,12 @@ export default function WorkoutScreen() {
             selectedDotColor: "#fff",
           }}
         />
+
+        <Card
+          title={"Treino do dia"}
+          description={treinos[selectedDate] || "Nenhum treino para este dia"}
+          onPress={() => alert("Implementar Isso")}
+        />
         <View style={styles.details}>
           <Text style={styles.title}>Treino do dia:</Text>
           <Text style={styles.treino}>
@@ -64,7 +68,7 @@ export default function WorkoutScreen() {
           </Text>
         </View>
         <View style={styles.buttons}>
- 
+
           <Button
             title="Gerenciar o treino"
             onPress={() => alert("Implementar Isso")}

@@ -1,86 +1,63 @@
 import * as React from "react";
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { View, StatusBar, StyleSheet } from "react-native";
 
-// pages
-import HomeAdmin from "./src/screens/(admin)/home"
-import HomeScreen from "./src/screens/(auth)/home"
-import Financial from "./src/screens/(auth)/financial";
-import Profile from "./src/screens/(auth)/profile";
-import Training from "./src/screens/(auth)/workout";
-import Notifications from "./src/screens/(auth)/notification";
+// Importando as páginas para os tipos de usuários
+import HomeAdmin from "./src/screens/(admin)/home";  // Tela do Admin
+import HomeScreen from './src/screens/(auth)/(aluno)/home';  // Tela Home normal para aluno
+import Financial from "./src/screens/(auth)/(aluno)/financial";
+import Profile from "./src/screens/(auth)/(aluno)/profile";
+import Training from "./src/screens/(auth)/(aluno)/workout";
 import Login from "./src/screens/(public)/login";
+import Notifications from "./src/screens/(auth)/(aluno)/notification";  // Exemplo de tela para todos
+import HomeStack from './src/navigation/stack-navigation'; // Para usuário normal
+import HomeStackAdmin from "./src/navigation/stack-navigation-admin"; // Para usuário admin
+import AddUser from "./src/screens/(admin)/adduser";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-
-function HomeStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={HomeAdmin}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
-}
 
 const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'transparent',  // Define o fundo transparente
+    background: 'transparent',
   },
 };
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(false);
-  // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
-  const [isUserType, setisUserType] = useState(0)
+  const [isSignedIn, setisSignedIn] = useState(true);  // Controla o login
+  const [isUserType, setIsUserType] = useState(2);  // 0 = Home normal, 1 = Treinador, 2 = Admin
 
   const screenOptions = {
-
     animationEnabled: false,
     headerShown: false,
     tabBarStyle: {
       position: 'absolute',
       backgroundColor: "#2B2B2B",
-      height: 100,
-      width: "90%",
-      borderRadius: 10,
-      marginBottom: 10,
-      marginLeft: "5%",
-      paddingBottom: 15,
+      height: 75,
+      width: "100%",
+      
+      paddingBottom: 5,
       borderTopWidth: 0,  // Remove a borda superior da navbar
       elevation: 0, // Remove sombras em Android
       shadowOpacity: 0, // Remove sombras no iOS
     },
     tabBarLabelStyle: {
       fontWeight: "900",
-      fontSize: 15,
+      fontSize: 12,
       tabBarActiveTintColor: "#ED5359",
       tabBarInactiveTintColor: "white",
     },
     tabBarActiveTintColor: "#ED5359",
     tabBarInactiveTintColor: "white",
-
   };
 
   return (
-
     <View style={styles.appContainer}>
-      <NavigationContainer theme={MyTheme} >
-
+      <NavigationContainer theme={MyTheme}>
         <StatusBar
           animated={true}
           translucent
@@ -91,11 +68,11 @@ export default function App() {
         {!isSignedIn ? (
           <Login login={() => setisSignedIn(true)} />
         ) : (
-
-          <Tab.Navigator screenOptions={screenOptions}  >
+          <Tab.Navigator screenOptions={screenOptions}>
+            {/* Menu - Exibe diferentes HomeStacks baseado no tipo de usuário */}
             <Tab.Screen
               name="Menu"
-              component={HomeStack}
+              component={isUserType === 0 ? HomeStack : isUserType === 2 ? HomeStackAdmin : HomeScreen}  // Dependendo do tipo de usuário, exibe o HomeStack correto
               options={{
                 headerShown: false,
                 tabBarIcon: ({ color, size }) => (
@@ -103,6 +80,8 @@ export default function App() {
                 ),
               }}
             />
+
+            {/* Tela de Treinamento */}
             <Tab.Screen
               name="Treino"
               component={Training}
@@ -113,6 +92,8 @@ export default function App() {
                 ),
               }}
             />
+
+            {/* Tela Financeiro */}
             <Tab.Screen
               name="Financeiro"
               component={Financial}
@@ -123,6 +104,8 @@ export default function App() {
                 ),
               }}
             />
+
+            {/* Tela de Perfil */}
             <Tab.Screen
               name="Perfil"
               component={Profile}
@@ -134,20 +117,30 @@ export default function App() {
               }}
             />
 
+            {/* Adiciona um novo Tab.Screen somente para Administradores */}
+            {isUserType === 2 && (
+              <Tab.Screen
+                name="CadUsuário"
+                component={AddUser}  // Nova tela exclusiva para Administradores
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ color, size }) => (
+                    <Ionicons name="person-add" color={color} size={size} />
+                  ),
+                }}
+              />
+            )}
+
           </Tab.Navigator>
-        )
-
-        }
-
-
+        )}
       </NavigationContainer>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: 'transparent', // Define como transparente o container da aplicação
+    backgroundColor: 'transparent',
   },
-})
+});
