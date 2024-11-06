@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#2B2B2B',
       padding: 15,
+      backgroundColor: "#2B2B2B",
+      borderBottomWidth: 3,
+      borderColor: "#ED5359"
+
       
     },
     headerText: {
@@ -37,6 +41,16 @@ const styles = StyleSheet.create({
       
       
     },
+  
+    barra:{
+      borderTopWidth:58,
+      borderColor: '#525153',
+      width: '100%',
+      height: 3,
+      top:0
+      
+
+    },
     
     card: {
       flex: 1,
@@ -48,11 +62,12 @@ const styles = StyleSheet.create({
       overflow: 'hidden',
       elevation: 8,
       height: 400,
-      //width:300,
-      //marginTop:25,
+      width:300,
+      marginTop:25,
       justifyContent: 'center',
       alignItems: 'center',
-      //marginVertical:150
+      marginVertical:100,
+      top:-90
       
       
       
@@ -78,29 +93,8 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: 'white',
     },
+
     
-
-    redline:{
-      backgroundColor:'#ED5359',
-      width:'100%',
-      height:2,
-      
-    },
-    texto:{
-      fontSize:14,
-      color:'white',
-      marginTop:10,
-      marginBottom:5,
-      marginLeft:5,
-      
-    },
-    textAbaixo:{
-      fontSize:14,
-      color:'white',
-      marginTop:5,
-      textAlign:'left',
-
-    },
     imagem:{
       position:'absolute',
       top:0,
@@ -114,8 +108,8 @@ const styles = StyleSheet.create({
     },
     cardInterno:{
       backgroundColor:'#fff',
-      margin:8,
-      padding:45,
+      margin:20,
+      padding:0,
       borderRadius:20,
       height:'80%',
       width:'100%',
@@ -131,7 +125,7 @@ const styles = StyleSheet.create({
       fontWeight:'bold',
       color:'#2B2B2B',
       marginTop:100,
-      marginBottom:40,
+      marginBottom:50,
       paddingTop:10,
       textDecorationLine: 'underline',
       left:3,
@@ -142,6 +136,24 @@ const styles = StyleSheet.create({
       
       
     },
+    perfil:{
+      top:-53,
+      left:4
+    },
+    nome:{
+      fontSize:18,
+      fontWeight:'bold',
+      color:'white',
+      marginLeft:60,
+      flexDirection: 'column',
+      top:-95
+      
+  
+      
+
+
+    }
+    
       
     }
   );

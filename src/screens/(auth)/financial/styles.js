@@ -22,30 +22,34 @@ import { colors } from "../../../styles/colors";
       fontSize: 18,
       color: colors.mutedForeground,
       marginBottom: 8,
+      left:'5%'
     },
     card: {
       backgroundColor: colors.cardBackground,
-      padding: 16,
+      padding: 10,
       borderRadius: 8,
       shadowColor: "#000",
       shadowOpacity: 0.1,
       shadowRadius: 10,
       elevation: 5,
       marginBottom: 20,
-      width: "100%",
+      width: "90%",
       justifyContent: "center",
+      left:'5%'
     },
     cardTwo: {
       backgroundColor: colors.cardBackground,
-      padding: 16,
+      padding: 10,
       borderRadius: 8,
       shadowColor: "#000",
       shadowOpacity: 0.1,
       shadowRadius: 10,
       elevation: 5,
       marginBottom: 18,
-      width: "100%",
+      width: "90%",
       justifyContent: "center",
+      left:'5%'
+      
   
   
     },
@@ -77,8 +81,12 @@ import { colors } from "../../../styles/colors";
     },
     buttonRow: {
       flexDirection: "row",
-      justifyContent: "space-between",
+      justifyContent: "center",
       marginTop: 16,
+      width: "50%",
+      borderRadius:8,
+      alignItems: "center",
+      left:'41%'
     },
     buttons :{
       gap:10,
@@ -90,6 +98,8 @@ import { colors } from "../../../styles/colors";
       padding: 12,
       borderRadius: 8,
       marginTop: 16,
+      width: "50%",
+      left: "25%",
     },
     dangerButtonText: {
       color: "#fff", // Texto em branco
@@ -105,7 +115,8 @@ import { colors } from "../../../styles/colors";
     moneyImage: {
       width: 30,
       height: 30,
-      marginRight: 8,
+      marginRight: 7,
+      left:'20%'
     },
   });
 
