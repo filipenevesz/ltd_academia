@@ -7,32 +7,13 @@ import { Ionicons } from "@expo/vector-icons";
 import { View, StatusBar, StyleSheet } from "react-native";
 
 // pages
-import HomeScreen from "./src/screens/(auth)/home"
 import Financial from "./src/screens/(auth)/financial";
 import Profile from "./src/screens/(auth)/profile";
 import Training from "./src/screens/(auth)/workout";
-import Notifications from "./src/screens/(auth)/notification";
 import Login from "./src/screens/(public)/login";
+import HomeStack from "./src/navigation/stack-navigation";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-
-function HomeStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
-}
 
 const MyTheme = {
   ...DefaultTheme,
