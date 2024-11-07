@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { View, StatusBar, SafeAreaView, StyleSheet } from 'react-native';
-import Header from '../../../components/header';
-import Button from '../../../components/button';
+import Header from '../../../../components/header';
+import Button from '../../../../components/button';
 import styles from './styles'
 
 export default function AddUser() {
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
@@ -17,7 +18,7 @@ export default function AddUser() {
           onPress={() => alert("ADICIONAR ESTA FUNCIONALIDADE")}
         />
         <Button
-          title="Cadastrar funcionário"
+          title="Cadastrar Funcionário"
           onPress={() => alert("ADICIONAR ESTA FUNCIONALIDADE")}
         />
       </View>

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { View, StatusBar, StyleSheet, Text, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Header from '../../../components/header';
-import ImageProfile from '../../../assets/images/defalt_profile.png';
-import Card from '../../../components/card'
+import Header from '../../../../components/header';
+import Card from '../../../../components/card';
+import ImageProfile from '../../../../assets/images/defalt_profile.png';
 
 import styles from './styles'
 

@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#333',
-        paddingTop: 50,
         padding: 20,
         borderBottomWidth: 3,
         borderColor: colors.primary,

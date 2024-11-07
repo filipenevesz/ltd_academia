@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import Button from "../components/button";
+import Button from '../components/button'
 
-const FormBase = ({ fields, onSubmit, buttonTitle }) => {
+const FormBaseDark = ({ fields, onSubmit, buttonTitle }) => {
     const { control, handleSubmit, formState: { errors } } = useForm();
 
     return (
@@ -43,23 +43,25 @@ const FormBase = ({ fields, onSubmit, buttonTitle }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#2B2B2B",
-        marginTop: 15,
-        width: "75%",
+        backgroundColor: "#d9d9d9",
+        margin: 10,
+        width: "95%",
         gap: 10,
+        paddingBottom: 60,
       },
     label: {
         marginBottom: 5,
         fontSize: 16,
-        color: "white",
+        color: "black",
       },
       
       inputText: {
         height: 40,
         paddingLeft: 10,
-        backgroundColor: "#D9D9D9",
+        backgroundColor: "#fff",
         borderRadius: 7,
-        height: 50,
+        borderColor: "#000",
+        borderWidth: 1,
         shadowColor: "#000",
         shadowOffset: {
           width: 0,
@@ -78,4 +80,4 @@ const styles = StyleSheet.create({
       },
 })
 
-export default FormBase;
+export default FormBaseDark;
