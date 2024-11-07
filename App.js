@@ -7,6 +7,7 @@ import { View, StatusBar, StyleSheet } from "react-native";
 
 import AuthNavigation from "./src/navigation/AuthNavigation";
 import AlunoNavigation from "./src/navigation/AlunoNavigation";
+import AdminNavigation from "./src/navigation/AdminNavigation";
 
 
 const Tab = createBottomTabNavigator();
@@ -22,7 +23,7 @@ const MyTheme = {
 export default function App() {
   const [isSignedIn, setisSignedIn] = useState(true);
   // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
-  const [isUserType, setisUserType] = useState(0)
+  const [isUserType, setisUserType] = useState(2)
 
   const screenOptions = {
     animationEnabled: false,
@@ -51,10 +52,19 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <NavigationContainer theme={MyTheme} >
-        {!isSignedIn ?
-        (<AuthNavigation onLogin={() => setisSignedIn(true)} />) :
-        (<AlunoNavigation isUserType={isUserType} />)
-      }
+      {!isSignedIn ? (
+        <AuthNavigation onLogin={() => setisSignedIn(true)} />
+      ) : (
+        <>
+          {isUserType == 0 ? (
+            <AlunoNavigation />
+          ) : isUserType == 1 ? (
+            <AlunoNavigation />
+          ) : isUserType == 2 ? (
+            <AdminNavigation />
+          ) : null}
+        </>
+      )}
       </NavigationContainer>
     </View>
   );
