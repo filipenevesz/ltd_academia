@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import styles from "./styles";
 import LoginForm from "../../../forms/LoginForm";
 import api from "../../../services/api";
+import {saveToken} from "../../../services/AuthService";
 
 // useState para o hover:
 export const Login = ({ login }) => {
@@ -44,8 +45,10 @@ export const Login = ({ login }) => {
         password: data.password,
       }
     );
-    console.log(response.data.token);
-      
+    const token = response.data.token;
+    saveToken(token);  
+    console.log();
+    login();
     }
   catch (error) {
     console.log(error);

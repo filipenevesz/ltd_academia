@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import HomeAdmin from "../screens/(auth)/(admin)/home"
+import HomeAdmin from "../screens/(auth)/(admin)/home";
 
 const Tab = createBottomTabNavigator();
 
