@@ -1,14 +1,16 @@
 import * as React from "react";
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { View, StatusBar, StyleSheet } from "react-native";
 
 import AuthNavigation from "./src/navigation/AuthNavigation";
 import AlunoNavigation from "./src/navigation/AlunoNavigation";
 import AdminNavigation from "./src/navigation/AdminNavigation";
-
+import api from "./src/services/api";
+import { save_user } from "./src/services/AuthService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,10 +23,32 @@ const MyTheme = {
 };
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(true);
-  // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
-  const [isUserType, setisUserType] = useState(2)
 
+  // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
+  const [isUserType, setUserType] = useState(null);
+  const [isSignedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    const fetchUserType = async () => {
+      try {
+        const token = await AsyncStorage.getItem("token");
+        if (token) {
+          const response = await api.get("/auth/me");
+          console.log(response.data);
+          save_user(response.data);
+          const userType = response.data.role;
+          setUserType(userType);
+          setSignedIn(true);
+        }
+      } catch (error) {
+        console.log(error);
+        setSignedIn(false);
+      }
+    };
+
+    fetchUserType();
+  }, []);
+
+  
   const screenOptions = {
     animationEnabled: false,
     headerShown: false,
@@ -53,14 +77,14 @@ export default function App() {
     <View style={styles.appContainer}>
       <NavigationContainer theme={MyTheme} >
       {!isSignedIn ? (
-        <AuthNavigation onLogin={() => setisSignedIn(true)} />
+        <AuthNavigation onLogin={() => setSignedIn(true)} />
       ) : (
         <>
-          {isUserType == 0 ? (
+          {isUserType === "STUDENT" ? (
             <AlunoNavigation />
-          ) : isUserType == 1 ? (
+          ) : isUserType == "TRAINER" ? (
             <AlunoNavigation />
-          ) : isUserType == 2 ? (
+          ) : isUserType == "ADMIN" ? (
             <AdminNavigation />
           ) : null}
         </>
