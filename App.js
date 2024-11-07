@@ -21,9 +21,9 @@ const MyTheme = {
 };
 
 export default function App() {
-  const [isSignedIn, setisSignedIn] = useState(true);
+  const [isSignedIn, setisSignedIn] = useState(false);
   // Tipo do Ususario : [0 = aluno; 1 = treinador; 2 = admin]
-  const [isUserType, setisUserType] = useState(2)
+  const [isUserType, setisUserType] = useState(0)
 
   const screenOptions = {
     animationEnabled: false,

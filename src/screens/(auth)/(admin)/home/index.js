@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { View, StatusBar, StyleSheet, Text, Image } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import Header from '../../../components/header';
-import ImageProfile from '../../../assets/images/defalt_profile.png';
-import Card from '../../../components/card'
+import Header from "../../../../components/header";
+import ImageProfile from '../../../../assets/images/defalt_profile.png';
+import Card from "../../../../components/card" // Ensure this path is correct and the component is exported properly
 
-import styles from './styles'
+import styles from './styles';
 
 export default function HomeAdmin() {
     return (
