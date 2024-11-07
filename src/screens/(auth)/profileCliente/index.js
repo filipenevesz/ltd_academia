@@ -33,37 +33,7 @@ export default function Profile() {
           </View>
         </View>
 
-        <View>
-          <Text style={styles.textInfo}>Minhas informações:</Text>
-          <ScrollView style={styles.card}>
-            <Text style={styles.textCard}>
-              Email: <Text style={styles.textCardInfo}>daviniccacio@gmail.com</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Endereço: <Text style={styles.textCardInfo}>Rua Argentina, 98, Centro</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Matrícula: <Text style={styles.textCardInfo}>0000</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Peso: <Text style={styles.textCardInfo}>80Kg</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Altura: <Text style={styles.textCardInfo}>180cm</Text>
-            </Text>
-          </ScrollView>
-        </View>
 
-        <View style={styles.buttons}>
-          <Button
-            title='Editar Perfil'
-            onPress = {()=>alert("CRIAR FUNCIONALIDADE DE VER PERFIL")}
-          />
-          <Button
-            title='Ver Ficha'
-            onPress = {()=>alert("CRIAR FUNCIONALIDADE DE VER FICHA")}
-          />
-        </View>
       </ScrollView>
     </SafeAreaView>
   );
