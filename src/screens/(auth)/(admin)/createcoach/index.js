@@ -15,26 +15,24 @@ export default function CreateCoach() {
   return (
     <SafeAreaView>
       <StatusBar barStyle="dark-content" />
-      <Header title="Cadastro de funcionário" />
+      <Header title="Cadastrar funcionário" />
 
       <ScrollView style={styles.containerBackground}>
         <Text style={styles.textContainer}>Informações do funcionário</Text>
         <CreateCoachForm onSubmit={handleCreateCoach} />
-
-        <RadioButton.Group  
-          onValueChange={newValue => setFuncionario(newValue)} 
-          value={funcionario} 
+        <RadioButton.Group
+          onValueChange={newValue => setFuncionario(newValue)}
+          value={funcionario}
         >
           <View style={styles.radioButtonOptions}>
             <Text style={styles.radioButtonText}>Administrador</Text>
-            <RadioButton value="opcao1" color="#ED5359" />
+            <RadioButton value='opcao1' color="#ED5359"/>
           </View>
           <View style={styles.radioButtonOptions}>
             <Text style={styles.radioButtonText}>Funcionário</Text>
-            <RadioButton value="opcao2" color="#ED5359" />
+            <RadioButton value='opcao2' color="#ED5359"/>
           </View>
         </RadioButton.Group>
-
       </ScrollView>
     </SafeAreaView>
   );
