@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderBottomWidth: 3,
         borderColor: colors.primary,
+        paddingTop: 50,
     },
     headerText: {
         fontSize: 20,

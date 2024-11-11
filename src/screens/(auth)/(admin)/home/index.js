@@ -43,21 +43,6 @@ export default function HomeAdmin() {
         <View style={styles.container}>
             <Header title={"Home"} />
             <ProfileLabel/>
-            <Card
-                title={"Ver alunos"}
-                description={"Observar e gerenciar os alunos"}
-                onPress={() => alert("Implementar Isso")}
-                />
-            <Card
-                title={"Ver treinadores"}
-                description={"Observar e gerenciar os treinadores"}
-                onPress={() => alert("Implementar Isso")}
-                />
-            <Card
-                title={"Ver turmas"}
-                description={"Observar e gerenciar as turmas"}
-                onPress={() => alert("Implementar Isso")}
-                />
             <View>
 
             </View>

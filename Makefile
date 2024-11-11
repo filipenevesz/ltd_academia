@@ -1,3 +1,3 @@
 
 run:
-	npx expo start -c
+	npm run android

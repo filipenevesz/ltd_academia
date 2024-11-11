@@ -2,8 +2,8 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import HomeAdmin from "../screens/(auth)/(admin)/home"
-import AddUser from "../screens/(auth)/(admin)/adduser";
-import CreateCoach from "../screens/(auth)/(admin)/createcoach";
+
+import AddUser from "../screens/(auth)/(admin)/alunos"
 
 const Tab = createBottomTabNavigator();
 
@@ -42,25 +42,16 @@ export default function AdminNavigation() {
                 }}
             />
             <Tab.Screen
-                name="Adicionar usuário"
+                name="Alunos"
                 component={AddUser}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="home" color={color} size={size} />
+                        <Ionicons name="person" color={color} size={size} />
                     ),
                 }}
             />
-            <Tab.Screen
-                name="Cadastrar treinador"
-                component={CreateCoach}
-                options={{
-                    headerShown: false,
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="home" color={color} size={size} />
-                    ),
-                }}
-            />
+           
             
         </Tab.Navigator>
     )
