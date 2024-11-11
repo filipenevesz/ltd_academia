@@ -1,6 +1,6 @@
-import FormBase from './FormBaseDark';
+import FormBase from './FormBaseLigth';
 
-export default function StudentForm({ onSubmit }) {
+export default function CreateAluno({ onSubmit }) {
     const fields = [
         {
             name: 'name',

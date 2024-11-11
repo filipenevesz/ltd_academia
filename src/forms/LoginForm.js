@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import FormBase from "./FormBase"
+import FormBase from "./FormBaseDark"
 
 
 const LoginForm = ({onSubmit}) => {
