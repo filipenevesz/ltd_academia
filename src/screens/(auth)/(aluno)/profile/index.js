@@ -33,25 +33,45 @@ export default function Profile() {
           </View>
         </View>
 
-        <View>
-          <Text style={styles.textInfo}>Minhas informações:</Text>
-          <ScrollView style={styles.card}>
-            <Text style={styles.textCard}>
-              Email: <Text style={styles.textCardInfo}>daviniccacio@gmail.com</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Endereço: <Text style={styles.textCardInfo}>Rua Argentina, 98, Centro</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Matrícula: <Text style={styles.textCardInfo}>0000</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Peso: <Text style={styles.textCardInfo}>80Kg</Text>
-            </Text>
-            <Text style={styles.textCard}>
-              Altura: <Text style={styles.textCardInfo}>180cm</Text>
-            </Text>
-          </ScrollView>
+        <View style={styles.tabContainer}>
+          <TouchableOpacity style={styles.tabItem}>
+            <Ionicons name="person" size={30} color="#ED5359" />
+            <Text style={styles.tabText}>Informações</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Ionicons name="document-text" size={30} color="gray" />
+            <Text style={styles.tabText}>Ficha de avaliação</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Ionicons name="wallet" size={30} color="gray" />
+            <Text style={styles.tabText}>Financeiro</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Informações</Text>
+          <View style={styles.infoCard}>
+            <View style={styles.infoRow}>
+              <Text style={styles.label}>Nome completo</Text>
+              <Text style={styles.value}>Francisco Pinto</Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Text style={styles.label}>Data de nascimento</Text>
+              <Text style={styles.value}>24/06/1999</Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Text style={styles.label}>Sexo</Text>
+              <Text style={styles.value}>Masculino</Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Text style={styles.label}>E-mail</Text>
+              <Text style={styles.value}>franciscopinto@gmail.com</Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Text style={styles.label}>Celular</Text>
+              <Text style={styles.value}>(99) 9 9999-9999</Text>
+            </View>
+          </View>
         </View>
 
         <View style={styles.buttons}>

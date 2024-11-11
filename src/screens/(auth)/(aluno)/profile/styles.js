@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#F3F3F3",
+      backgroundColor: "#fff",
     },
     header: {
       padding: 20,
@@ -67,54 +67,42 @@ const styles = StyleSheet.create({
       fontWeight: "700",
       fontSize: 23,
     },
-    textInfo: {
+    sectionTitle: {
+      textAlign: "center",
       fontSize: 20,
-      paddingTop: 50,
-      paddingLeft: 30,
-      fontWeight: '400',
+      fontWeight: "600",
+      paddingHorizontal: 20,
+      marginVertical: 10,
+      color: "#2B2B2B",
     },
     card: {
-      padding: 10,
-      paddingBottom: 120,
       backgroundColor: "#fff",
-      marginHorizontal: 30,
+      padding: 10,
       borderRadius: 10,
-      overflow: "hidden",
-      shadowColor: "#000",
-      shadowOpacity: 0.1,
-      shadowRadius: 10,
-      elevation: 5,
+      marginHorizontal: 20,
+      marginBottom: 10,
     },
-    textCard: {
-      fontSize: 17,
-      fontWeight: '700',
-      padding: 2,
+    label: {
+      fontSize: 14,
+      color: "#000",
+      marginTop: 10,
+      fontWeight: "600"
     },
-    textCardInfo: {
-      fontWeight: '400',
-      fontSize: 17,
+    value: {
+      textAlignVertical: "center",
+      height: 30,
+      paddingLeft: 10,
+      fontSize: 16,
+      color: "#000",
+      fontWeight: "400",
+      marginVertical: 5,
+      borderWidth: 2,
+      borderRadius: 10,
+      borderColor: "#ddd",
     },
     buttons: {
-      alignItems:"center",
-      justifyContent: "center",
-      flexDirection: "row-reverse",
-      marginHorizontal: 100,
-      padding:10,
-      gap:10,
-    },
-    // buttonStyle: {
-    //   flex: 1,
-    //   width: "50%",
-    //   margin: 10,
-    //   marginHorizontal: 3,
-    //   backgroundColor: "#ED5359",
-    //   alignItems: "center",
-    //   borderRadius: 10,
-    //   padding: 10,
-    // },
-    buttonText: {
-      fontWeight: "bold",
-      color: "white",
+      marginHorizontal: 50,
+      paddingBottom: 100,
     },
     addressContainer: {
       flexDirection: 'row', 
@@ -122,6 +110,22 @@ const styles = StyleSheet.create({
     },
     addressText: {
       fontSize: 16,
+    },
+    tabContainer: {
+      paddingTop: 40,
+      flexDirection: "row",
+      justifyContent: "space-around",
+      paddingVertical: 15,
+      borderBottomWidth: 1,
+      borderColor: "#DDD",
+    },
+    tabItem: {
+      alignItems: "center",
+    },
+    tabText: {
+      fontSize: 12,
+      color: "#555",
+      marginTop: 5,
     },
 });
 

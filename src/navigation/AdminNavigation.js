@@ -5,6 +5,7 @@ import HomeAdmin from "../screens/(auth)/(admin)/home"
 
 import AddUser from "../screens/(auth)/(admin)/alunos"
 import CreateCoach from "../screens/(auth)/(admin)/createcoach";
+import Profile from "../screens/(auth)/(aluno)/profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -53,8 +54,8 @@ export default function AdminNavigation() {
                 }}
             />
             <Tab.Screen
-                name="Cadastro"
-                component={CreateCoach}
+                name="Perfil de aluno"
+                component={Profile}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (
