@@ -43,11 +43,10 @@ const FormBaseDark = ({ fields, onSubmit, buttonTitle }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#d9d9d9",
+        backgroundColor: "#f5f5f5",
         margin: 10,
         width: "95%",
         gap: 10,
-        paddingBottom: 60,
       },
     label: {
         marginBottom: 5,

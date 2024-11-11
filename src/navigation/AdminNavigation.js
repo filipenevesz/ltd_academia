@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import HomeAdmin from "../screens/(auth)/(admin)/home"
 
 import AddUser from "../screens/(auth)/(admin)/alunos"
+import CreateCoach from "../screens/(auth)/(admin)/createcoach";
 
 const Tab = createBottomTabNavigator();
 
@@ -44,6 +45,16 @@ export default function AdminNavigation() {
             <Tab.Screen
                 name="Alunos"
                 component={AddUser}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="person" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Cadastro"
+                component={CreateCoach}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (

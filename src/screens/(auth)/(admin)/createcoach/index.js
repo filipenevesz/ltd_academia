@@ -1,27 +1,40 @@
-import React from 'react';
-import { View, Text, SafeAreaView, StatusBar, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, SafeAreaView, StatusBar, ScrollView, Button, TouchableOpacity } from 'react-native';
 import Header from '../../../../components/header';
 import styles from './styles'; 
 import CreateCoachForm from '../../../../forms/CreateCoachForm';
+import { RadioButton } from 'react-native-paper';
 
 export default function CreateCoach() {
-
-  // Função para lidar com o envio do formulário
+  const [funcionario, setFuncionario] = useState();
+  
   const handleCreateCoach = (data) => {
     console.log("Dados do Funcionário:", data);
-    // Adicione a lógica para processar os dados do funcionário
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView>
       <StatusBar barStyle="dark-content" />
       <Header title="Cadastro de funcionário" />
 
       <ScrollView style={styles.containerBackground}>
         <Text style={styles.textContainer}>Informações do funcionário</Text>
-
-        {/* Componente de formulário com o handler passado como prop */}
         <CreateCoachForm onSubmit={handleCreateCoach} />
+
+        <RadioButton.Group  
+          onValueChange={newValue => setFuncionario(newValue)} 
+          value={funcionario} 
+        >
+          <View style={styles.radioButtonOptions}>
+            <Text style={styles.radioButtonText}>Administrador</Text>
+            <RadioButton value="opcao1" color="#ED5359" />
+          </View>
+          <View style={styles.radioButtonOptions}>
+            <Text style={styles.radioButtonText}>Funcionário</Text>
+            <RadioButton value="opcao2" color="#ED5359" />
+          </View>
+        </RadioButton.Group>
+
       </ScrollView>
     </SafeAreaView>
   );
