@@ -7,7 +7,7 @@ import AuthNavigation from "./src/navigation/AuthNavigation";
 import AlunoNavigation from "./src/navigation/AlunoNavigation";
 import AdminNavigation from "./src/navigation/AdminNavigation";
 import api from "./src/services/api";
-import { saveUser, removeToken,get_user } from "./src/services/AuthService";
+import { saveUser, removeToken, get_user } from "./src/services/AuthService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
@@ -44,7 +44,8 @@ export default function App() {
 
     fetchUserType();
     console.log("Tipo de Usuário: ", isUserType);
-  }, []);
+  }, [isUserType]);
+
   handlerLogin = () => {
     user = get_user();
     console.log(user);
@@ -63,40 +64,40 @@ export default function App() {
     }
   }
 
-  handleUserError = () => {
-    Alert.alert(
-      "Erro",
-      "Usuário não identificado",
-      [
-        {
-          text: "Sair",
-          onPress: () => {
-            removeToken();
-            setSignedIn(false);
-          },
-        },
-      ],
-      { cancelable: false }
-    );  
-  };
+  // handleUserError = () => {
+  //   Alert.alert(
+  //     "Erro",
+  //     "Usuário não identificado",
+  //     [
+  //       {
+  //         text: "Sair",
+  //         onPress: () => {
+  //           removeToken();
+  //           setSignedIn(false);
+  //         },
+  //       },
+  //     ],
+  //     { cancelable: false }
+  //   );
+  // };
 
 
   return (
     <View style={styles.appContainer}>
       <NavigationContainer theme={MyTheme}>
         {!isSignedIn ? (
-          <AuthNavigation onLogin={()=>{setSignedIn(true)}} />
+          <AuthNavigation onLogin={() => { setSignedIn(true) }} />
         ) : (
           <>
             {isUserType === 'STUDENT' ? (
-              <AlunoNavigation onLogout={handlerLogout}/>
+              <AlunoNavigation onLogout={handlerLogout} />
             ) : isUserType === 'TRAINER' ? (
               <AlunoNavigation />
             ) : isUserType === 'ADMIN' ? (
-              <AdminNavigation onLogout={handlerLogout}/>
-            ) : (
-              handleUserError()
-            )}
+              <AdminNavigation onLogout={handlerLogout} />
+            )
+              : (<></>)
+            }
           </>
         )}
       </NavigationContainer>
