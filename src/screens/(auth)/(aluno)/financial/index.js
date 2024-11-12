@@ -34,7 +34,7 @@ export default function Financial() {
 
 
 
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.containerScroll}>
         <View style={styles.titleContainer}>
           <Ionicons name="person-circle" size={60} color={"#2b2b2b"} />
           <Text style={styles.title}> Francisco Pinto</Text>
@@ -58,7 +58,7 @@ export default function Financial() {
           </View>
           <Text style={styles.mutedText}>Pagamento efetuado em 21/Set</Text>
           <View style={styles.buttonRow}>
-            <View style = {styles.buttons}>
+            <View>
               <Button
                 title="Ver informações"
                 onPress={()=>alert("ADICIONAR ESTA FUNCIONALIDADE")}
@@ -89,7 +89,6 @@ export default function Financial() {
             <Text style={styles.dangerButtonText}>Efetuar pagamento</Text>
           </TouchableOpacity> */}
           <Button
-          style = {styles.dangerButton}
           onPress={()=>alert("ADICIONAR ESTA FUNCIONALIDADE")}
             accessibilityLabel="Make payment"
             title="Efetuar pagamento"

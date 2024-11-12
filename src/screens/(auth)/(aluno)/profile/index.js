@@ -12,7 +12,7 @@ export default function Profile() {
         title='Perfil'
       />
 
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.containerScroll}>
         <View style={styles.profile}>
           <View style={styles.profileContainer}>
             <View style={styles.profilePhoto}>
