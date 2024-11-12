@@ -85,7 +85,7 @@ export default function App() {
         ) : (
           <>
             {isUserType === 'STUDENT' ? (
-              <AlunoNavigation />
+              <AlunoNavigation onLogout={handlerLogout}/>
             ) : isUserType === 'TRAINER' ? (
               <AlunoNavigation />
             ) : isUserType === 'ADMIN' ? (

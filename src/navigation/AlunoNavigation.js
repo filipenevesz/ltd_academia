@@ -4,13 +4,12 @@ import { Ionicons } from "@expo/vector-icons";
 import Financial from "../screens/(auth)/(aluno)/financial";
 import Profile from "../screens/(auth)/(aluno)/profile";
 import Training from "../screens/(auth)/(aluno)/workout";
-import Home from "../screens/(auth)/(aluno)/home";
-import color from "../styles/colors"
 import HomeScreen from "../screens/(auth)/(aluno)/home";
+import Config from "../screens/(auth)/(aluno)/config";
 
 const Tab = createBottomTabNavigator();
 
-export default function AlunoNavigation() {
+export default function AlunoNavigation({ onLogout }) {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -74,6 +73,18 @@ export default function AlunoNavigation() {
                     ),
                 }}
             />
+
+            <Tab.Screen
+                name="Configurações"
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="settings-sharp" color={color} size={size} />
+                    ),
+                }}
+            >
+                {(props) => <Config {...props} onLogout={onLogout} />}
+            </Tab.Screen>
         </Tab.Navigator>
     )
 }

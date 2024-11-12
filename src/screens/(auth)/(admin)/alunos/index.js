@@ -5,11 +5,17 @@ import styles from './styles';
 import { Searchbar, Card, Avatar, IconButton } from 'react-native-paper';
 import CreateAluno from '../../../../forms/CreateAlunoForm';
 import EditAluno from '../../../../forms/EditAlunoForm';
+import api from '../../../../services/api';
 
 
 export default function AlunoScreen() {
 
+  
   const [searchQuery, setSearchQuery] = React.useState('');
+  const [alunos, setAlunos] = React.useState([]);
+  const [filteredAlunos, setFilteredAlunos] = React.useState([]);
+  const [refreshing, setRefreshing] = React.useState(false);
+
   const [isUpdateModalVisible, setUpdateModalVisible] = React.useState(false);
   const [isCreateModalVisible, setCreateModalVisible] = React.useState(false);
   const [isDeleteModalVisible, setDeleteModalVisible] = React.useState(false);
@@ -31,100 +37,43 @@ export default function AlunoScreen() {
     setSelectedAluno(null);
   };
 
-  const [alunos, setAlunos] = React.useState([
-    {
-      "id": 1,
-      "name": "João",
-      "lastName": "Silva",
-      "imageUrl": "https://s2-g1.glbimg.com/MVIpOVDJgHL5JQkPIkh6NbAtkzw=/0x0:620x794/984x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2012/03/06/caters_monkey_snapper_03.jpg",
-      "email": "joaoSilva@gmail.com",
-      "createad": "10/10/2021"
+  const fetchAlunos = React.useCallback(async () => {
+    try{
+      const response = await api.get('/users/alunos/all')
+      console.log
+      setAlunos(response.data);
+      setFilteredAlunos(response.data);
+    }
+    catch(error){
+      alert("Erro ao buscar alunos");	
+    }
+  }, []);
 
-    },
-    {
-      id: 2,
-      "name": "Maria",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": "mariasilva@gmail.com",
-      "createad": "10/10/2021"
-    },
-    {
-      id: 3,
-      "name": "Pedro",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": "pedroSilva@gmail.com",
-      "createad": "10/10/2021"
-    },
-    {
-      id: 4,
-      "name": "Ana",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-    },
-    {
-      id: 5,
-      "name": "José",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": "",
-      "createad": "10/10/2021"
-    },
-    {
-      id: 6,
-      "name": "Carlos",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": ""
-    },
-    {
-      "id": 10,
-      "name": "João",
-      "lastName": "Silva",
-      "imageUrl": "https://s2-g1.glbimg.com/MVIpOVDJgHL5JQkPIkh6NbAtkzw=/0x0:620x794/984x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2012/03/06/caters_monkey_snapper_03.jpg",
-      "email": "joaoSilva@gmail.com",
-      "createad": "10/10/2021"
+  React.useEffect(() => {
+    fetchAlunos();
+  }, [fetchAlunos]);
 
-    },
-    {
-      id: 20,
-      "name": "Maria",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": "mariasilva@gmail.com",
-      "createad": "10/10/2021"
-    },
-    {
-      id: 30,
-      "name": "Pedro",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": "pedroSilva@gmail.com",
-      "createad": "10/10/2021"
-    },
-    {
-      id: 40,
-      "name": "Ana",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-    },
-    {
-      id: 50,
-      "name": "José",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": "",
-      "createad": "10/10/2021"
-    },
-    {
-      id: 60,
-      "name": "Carlos",
-      "lastName": "Silva",
-      "imageUrl": "https://www.google.com",
-      "email": ""
-    },
-  ]);
+  React.useEffect(() => {
+    if (searchQuery === '') {
+      setFilteredAlunos(alunos);
+    } else {
+      const lowerCaseQuery = searchQuery.toLowerCase();
+      const filtered = alunos.filter((aluno) => 
+        aluno.name.toLowerCase().includes(lowerCaseQuery) ||
+        aluno.lastName.toLowerCase().includes(lowerCaseQuery) ||
+        aluno.email.toLowerCase().includes(lowerCaseQuery) ||
+        aluno.cpf.toLowerCase().includes(lowerCaseQuery)
+      );
+      setFilteredAlunos(filtered);
+    }
+  }, [searchQuery, alunos]);
+
+  const onRefresh = async () => { 
+    setRefreshing(true);
+    await fetchAlunos();
+    setRefreshing(false);
+  };
+
 
   renderAlunos = ({ item }) => (
 
@@ -160,10 +109,12 @@ export default function AlunoScreen() {
       />
       <FlatList
         style={styles.list}
-        data={alunos}
-        keyExtractor={(item) => item.id.toString()}
+        data={filteredAlunos}
+        keyExtractor={(item) => item.cpf}
         renderItem={renderAlunos}
         contentContainerStyle={{ paddingBottom: 100 }}
+        onRefresh={onRefresh}
+        refreshing={refreshing}
       />
       <IconButton
         icon="plus"

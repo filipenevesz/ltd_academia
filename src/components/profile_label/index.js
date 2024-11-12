@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { get_user } from "../../services/AuthService";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
+import {Avatar} from "react-native-paper";
 
 
 
@@ -41,7 +42,8 @@ export default function ProfileLabel() {
     return(
         <View style={styles.container}>
         <StatusBar barStyle="dark-content" /><View style={styles.profile}>
-                <Image style={styles.perfil} source={{ uri: 'https://s2-g1.glbimg.com/MVIpOVDJgHL5JQkPIkh6NbAtkzw=/0x0:620x794/984x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2012/03/06/caters_monkey_snapper_03.jpg' }} />
+                {/* <Image style={styles.perfil} source={{ uri: user.imageUrl }} /> */}
+                <Avatar.Image size={50} source={{ uri: user?.imageUrl }} style={styles.perfil}/>
                 <Text style={styles.nome}>
                     {greeting}{'\n'}
                     {user ? `${user.name.toUpperCase()} ${user.lastName.toUpperCase()}` : 'Carregando...'}
