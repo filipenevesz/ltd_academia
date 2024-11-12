@@ -20,7 +20,7 @@ const MyTheme = {
 };
 
 export default function App() {
-  const [isUserType, setUserType] = useState("Desconhecido");
+  const [isUserType, setUserType] = useState("desconhecido");
   const [isSignedIn, setSignedIn] = useState(false);
 
   useEffect(() => {

@@ -11,6 +11,10 @@ import api from '../../../../services/api';
 export default function AlunoScreen() {
 
   
+  
+  
+
+  
   const [searchQuery, setSearchQuery] = React.useState('');
   const [alunos, setAlunos] = React.useState([]);
   const [filteredAlunos, setFilteredAlunos] = React.useState([]);
@@ -40,7 +44,6 @@ export default function AlunoScreen() {
   const fetchAlunos = React.useCallback(async () => {
     try{
       const response = await api.get('/users/alunos/all')
-      console.log
       setAlunos(response.data);
       setFilteredAlunos(response.data);
     }
@@ -48,6 +51,33 @@ export default function AlunoScreen() {
       alert("Erro ao buscar alunos");	
     }
   }, []);
+
+  const deleteAluno = async (aluno) => {
+    try{
+      await api.delete(`/users/email/${aluno.email}`);
+      fetchAlunos();
+      alert("Aluno deletado com sucesso");
+    }
+    catch(error){
+      alert("Erro ao deletar aluno");
+    }
+  }
+
+  const createAluno = async (data) => {
+    senha = Math.random().toString(36).slice(-8);
+    try{
+      data.role = 'STUDENT'
+      data.imageUrl = 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
+      data.password = senha
+      console.log(data);
+      await api.post('/auth/register', data);
+      
+    }
+    catch(error){
+      alert("Erro ao criar aluno");
+    }
+  }
+
 
   React.useEffect(() => {
     fetchAlunos();
@@ -85,7 +115,7 @@ export default function AlunoScreen() {
         right={(props) =>
           <>
             <IconButton icon="pencil" onPress={() => { openUpdateModal(item) }} />
-            <IconButton icon="delete" iconColor="rgb(255, 82, 82)" onPress={() => { alert("implementar isso") }} />
+            <IconButton icon="delete" iconColor="rgb(255, 82, 82)" onPress={() => { deleteAluno(item) }} />
           </>
 
         }
@@ -131,7 +161,7 @@ export default function AlunoScreen() {
         onRequestClose={closeModals}
       >
         <CreateAluno
-          onSubmit={(data) => {closeModals(); alert(JSON.stringify(data))}
+          onSubmit={(data) => {createAluno(data); closeModals()}
           }
         />
       </Modal>
@@ -140,7 +170,7 @@ export default function AlunoScreen() {
         onRequestClose={closeModals}
       >
         <EditAluno
-          onSubmit={(data) => {closeModals(); alert(JSON.stringify(data))}
+          onSubmit={(data) => { closeModals();}
           }
           aluno={selectedAluno}
         />

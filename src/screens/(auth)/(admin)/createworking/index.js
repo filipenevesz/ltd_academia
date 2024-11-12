@@ -1,16 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, StatusBar } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Calendar } from 'react-native-calendars';
 import styles from './styles';
 import Header from '../../../../components/header'
 import Button from '../../../../components/button'
+import api from '../../../../services/api';
 
 const CreateWorking = () => {
   const [nomeTreino, setNomeTreino] = useState('');
   const [descricao, setDescricao] = useState('');
   const [aluno, setAluno] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
+  const [alunos, setAlunos] = useState([]);
+
+  const fetchAlunos = useCallback(async () => {
+    try{
+      const response = await api.get('/users/alunos/all')
+      setAlunos(response.data);
+    }
+    catch(error){
+      alert("Erro ao buscar alunos");	
+    }
+  }, []);
+
+  React.useEffect(() => {
+    fetchAlunos();
+  }, [fetchAlunos]);
+
+  
 
   return (
     <View style={styles.container}>
@@ -40,11 +58,9 @@ const CreateWorking = () => {
           onValueChange={(itemValue) => setAluno(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Selecione um aluno" value="" />
-          <Picker.Item label="ALUNO 01" value="aluno1" />
-          <Picker.Item label="ALUNO 02" value="aluno2" />
-          <Picker.Item label="ALUNO 03" value="aluno3" />
-          <Picker.Item label="ALUNO 04" value="aluno4" />
+          {alunos.map((aluno) => (
+            <Picker.Item key={aluno.cpf} label={aluno.name} value={aluno.cpf} />
+          ))}
         </Picker>
 
         <Text style={styles.label}>Selecionar dia(s) do treino</Text>
@@ -56,7 +72,10 @@ const CreateWorking = () => {
           style={styles.calendar}
         />
 
-      <Button title="Gerenciar o treino" onPress={() => alert("Implementar Isso")} />
+      <Button title="Gerenciar o treino" onPress={() => {
+        alert('Treino criado com sucesso!');
+        alert(selectedDate)
+      }} />
 
       </ScrollView>
     </View>

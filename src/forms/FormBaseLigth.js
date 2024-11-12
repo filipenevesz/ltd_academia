@@ -2,9 +2,10 @@ import React from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import Button from '../components/button'
+import RadioButton from "react-native-paper";
 
 
-const FormBase = ({ fields, onSubmit, buttonTitle, title = "Formulario" }) => {
+const FormBase = ({ fields, onSubmit, buttonTitle, title = "Formulario", options }) => {
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: fields.reduce((acc, field) => {
       acc[field.name] = field.value || "";
@@ -27,7 +28,8 @@ const FormBase = ({ fields, onSubmit, buttonTitle, title = "Formulario" }) => {
                 style={styles.input}
               >
 
-                <>
+                 
+                    <>
                   <Text style={styles.label}>{field.label}</Text>
                   <TextInput
                     secureTextEntry={field.name === "password"}
@@ -37,8 +39,9 @@ const FormBase = ({ fields, onSubmit, buttonTitle, title = "Formulario" }) => {
                     onBlur={onBlur}
                     value={value}
                   />
-                </>
+                    </>
               </View>
+            
 
             )}
           />

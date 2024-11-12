@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import HomeAdmin from "../screens/(auth)/(admin)/home"
 import CreateWorkout from "../screens/(auth)/(admin)/createworking";
-import AddUser from "../screens/(auth)/(admin)/alunos"
 import FichaAvaliacao from "../screens/(auth)/(admin)/avaliation";
 import CadastroAluno from "../screens/(auth)/(admin)/createstudent";
 import AlunoScreen from "../screens/(auth)/(admin)/alunos"
+import FuncionarioScreen from "../screens/(auth)/(admin)/funcionarios";
 import Config from "../screens/(auth)/(admin)/config"
 
 const Tab = createBottomTabNavigator();
@@ -52,6 +52,16 @@ export default function AdminNavigation( {onLogout} ) {
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="person" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Funcionarios"
+                component={FuncionarioScreen}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="person-outline" color={color} size={size} />
                     ),
                 }}
             />

@@ -1,6 +1,6 @@
 import FormBase from './FormBaseLigth';
 
-export default function CreateAluno({ onSubmit }) {
+export default function CreateFuncionario({ onSubmit }) {
     const fields = [
         {
             name: 'name',
@@ -40,6 +40,12 @@ export default function CreateAluno({ onSubmit }) {
             required: true,
             
         },
+        {
+            name: 'role',
+            label: 'Cargo',
+            type: 'select',
+
+        }
     ]
 
     return (
@@ -47,6 +53,10 @@ export default function CreateAluno({ onSubmit }) {
             fields={fields}
             onSubmit={onSubmit}
             buttonTitle={'Cadastrar'}
+            options={[
+                { label: 'Admin', value: 'ADMIN' },
+                { label: 'Instrutor', value: 'TRAINER' },
+            ]}
 
         />
     );
