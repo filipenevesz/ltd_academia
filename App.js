@@ -7,7 +7,7 @@ import AuthNavigation from "./src/navigation/AuthNavigation";
 import AlunoNavigation from "./src/navigation/AlunoNavigation";
 import AdminNavigation from "./src/navigation/AdminNavigation";
 import api from "./src/services/api";
-import { save_user, removeToken } from "./src/services/AuthService";
+import { saveUser, removeToken } from "./src/services/AuthService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const MyTheme = {
@@ -29,7 +29,7 @@ export default function App() {
         if (token) {
           const response = await api.get("/auth/me");
           console.log(response.data);
-          save_user(response.data);
+          saveUser(response.data);
           const userType = response.data.role;
           setUserType(userType);
           setSignedIn(true);
@@ -44,6 +44,21 @@ export default function App() {
     fetchUserType();
     console.log("Tipo de Usuário: ", isUserType);
   }, []);
+  handlerLogin = () => {
+    setSignedIn(true);
+    fetchUserType();
+  };
+
+  handlerLogout = async () => {
+    try {
+      await AsyncStorage.clear();
+      setSignedIn(false);
+    }
+    catch (error) {
+      console.error("Erro ao sair: ", error);
+    }
+  }
+
   handleUserError = () => {
     Alert.alert(
       "Erro",
@@ -65,16 +80,16 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <NavigationContainer theme={MyTheme}>
-        {isSignedIn ? (
-          <AuthNavigation onLogin={() => setSignedIn(true)} />
+        {!isSignedIn ? (
+          <AuthNavigation onLogin={()=>{setSignedIn(true)}} />
         ) : (
           <>
-            {isUserType === 'Aluno' ? (
+            {isUserType === 'STUDENT' ? (
               <AlunoNavigation />
-            ) : isUserType === 'Treinador' ? (
+            ) : isUserType === 'TRAINER' ? (
               <AlunoNavigation />
-            ) : 1 == 1 ? (
-              <AdminNavigation />
+            ) : isUserType === 'ADMIN' ? (
+              <AdminNavigation onLogout={handlerLogout}/>
             ) : (
               handleUserError()
             )}

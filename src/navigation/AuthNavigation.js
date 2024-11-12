@@ -9,7 +9,7 @@ export default function AuthNavigation({onLogin}){
     return (
         <Stack.Navigator>
             <Stack.Screen name="Login" options={{headerShown: false}}>
-                {(props) => <Login {...props} login={onLogin}/>}
+                {(props) => <Login {...props} onLogin={onLogin}/>}
             </Stack.Screen>
         </Stack.Navigator>
     );

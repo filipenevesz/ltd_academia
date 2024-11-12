@@ -2,12 +2,12 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import HomeAdmin from "../screens/(auth)/(admin)/home"
-
-import AddUser from "../screens/(auth)/(admin)/alunos"
+import AlunoScreen from "../screens/(auth)/(admin)/alunos"
+import Config from "../screens/(auth)/(admin)/config"
 
 const Tab = createBottomTabNavigator();
 
-export default function AdminNavigation() {
+export default function AdminNavigation( {onLogout} ) {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -43,7 +43,7 @@ export default function AdminNavigation() {
             />
             <Tab.Screen
                 name="Alunos"
-                component={AddUser}
+                component={AlunoScreen}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (
@@ -51,7 +51,17 @@ export default function AdminNavigation() {
                     ),
                 }}
             />
-           
+           <Tab.Screen
+        name="Configurações"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings-sharp" color={color} size={size} />
+          ),
+        }}
+      >
+        {(props) => <Config {...props} onLogout={onLogout} />}
+      </Tab.Screen>
             
         </Tab.Navigator>
     )

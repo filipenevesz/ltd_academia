@@ -5,7 +5,7 @@ import Button from "../components/button";
 import { Ionicons } from "@expo/vector-icons";
 
 
-const FormBase = ({ fields, onSubmit, buttonTitle, mode = "dark", title = "Formulario" }) => {
+const FormBase = ({ fields, onSubmit, buttonTitle, mode = "dark", title = null }) => {
     const { control, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
     const styles = mode === "dark" ? stylesDark : stylesLight;

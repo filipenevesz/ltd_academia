@@ -30,7 +30,7 @@ export const removeToken = async () => {
     }
 };
 
-export const save_user = async (user) => {
+export const saveUser = async (user) => {
     try{
         await AsyncStorage.setItem("user",JSON.stringify(user));
     }
