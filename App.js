@@ -7,8 +7,9 @@ import AuthNavigation from "./src/navigation/AuthNavigation";
 import AlunoNavigation from "./src/navigation/AlunoNavigation";
 import AdminNavigation from "./src/navigation/AdminNavigation";
 import api from "./src/services/api";
-import { saveUser, removeToken } from "./src/services/AuthService";
+import { saveUser, removeToken,get_user } from "./src/services/AuthService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const MyTheme = {
   ...DefaultTheme,
@@ -37,7 +38,7 @@ export default function App() {
       } catch (error) {
         console.log(error);
         setSignedIn(true);
-        setUserType("Aluno");
+        setUserType("Desconhecido");
       }
     };
 
@@ -45,8 +46,11 @@ export default function App() {
     console.log("Tipo de Usuário: ", isUserType);
   }, []);
   handlerLogin = () => {
+    user = get_user();
+    console.log(user);
     setSignedIn(true);
     fetchUserType();
+    setUserType(user.role);
   };
 
   handlerLogout = async () => {
