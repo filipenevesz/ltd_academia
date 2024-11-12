@@ -2,8 +2,10 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import HomeAdmin from "../screens/(auth)/(admin)/home"
-
+import CreateWorkout from "../screens/(auth)/(admin)/createworking";
 import AddUser from "../screens/(auth)/(admin)/alunos"
+import FichaAvaliacao from "../screens/(auth)/(admin)/avaliation";
+import CadastroAluno from "../screens/(auth)/(admin)/createstudent";
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +50,36 @@ export default function AdminNavigation() {
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="person" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Criar treino"
+                component={CreateWorkout}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="barbell" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Ficha"
+                component={FichaAvaliacao}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="document-text" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Cadastro aluno"
+                component={CadastroAluno}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="person-add" color={color} size={size} />
                     ),
                 }}
             />

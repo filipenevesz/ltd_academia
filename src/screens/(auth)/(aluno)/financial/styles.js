@@ -5,7 +5,7 @@ import { colors } from "../../../../styles/colors";
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      
+      marginBottom:80,
     },
 
     titleContainer: {
@@ -50,9 +50,6 @@ import { colors } from "../../../../styles/colors";
       width: "90%",
       justifyContent: "center",
       left:'5%'
-      
-  
-  
     },
     cardTitle: {
       fontSize: 18,
@@ -80,20 +77,12 @@ import { colors } from "../../../../styles/colors";
       color: colors.mutedForeground,
       marginTop: 4,
     },
-    buttonRow: {
-      flexDirection: "row",
-      justifyContent: "center",
-      marginTop: 16,
-      width: "50%",
-      borderRadius:8,
-      alignItems: "center",
-      left:'41%'
-    },
+   
     buttons :{
       gap:10,
       width:"100%",
 
-         },
+    },
     dangerButton: {
       backgroundColor: colors.primary,
       padding: 12,
