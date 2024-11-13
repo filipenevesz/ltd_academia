@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import styles from "./styles";
 import LoginForm from "../../../forms/LoginForm";
 import api from "../../../services/api";
-import {saveToken} from "../../../services/AuthService";
+import { saveToken } from "../../../services/AuthService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -47,15 +47,16 @@ export const Login = ({ onLogin }) => {
         email: data.email,
         password: data.password,
       });
-      
+
 
       await AsyncStorage.setItem('token', response.data.token);
       console.log("Login bem-sucedido:", response.data);
       alert('Login bem-sucedido!');
       onLogin();
+
     } catch (error) {
       console.error("Erro ao fazer login:", error);
-      
+
       if (error.response) {
         console.error("Erro na resposta:", error.response.data);
         console.error("Status:", error.response.status);
@@ -70,31 +71,31 @@ export const Login = ({ onLogin }) => {
       }
     }
   };
-return (
+  return (
 
-      <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
-        <View style={styles.containerLogin}>
-          {/*View da imagem e do texto 'Bem vindo'*/}
-          <View style={styles.header}>
-            {
-              !keyboardVisible ? <Image source={LoginImage} /> : null
-            }
+      <View style={styles.containerLogin}>
+        {/*View da imagem e do texto 'Bem vindo'*/}
+        <View style={styles.header}>
+          {
+            !keyboardVisible ? <Image source={LoginImage} /> : null
+          }
 
-            <Text style={styles.textLogin}>Bem-vindo(a)!</Text>
-          </View>
-          {/*Formulario de login*/}
-          <LoginForm
-            onSubmit={onSubmit}
-          />
+          <Text style={styles.textLogin}>Bem-vindo(a)!</Text>
         </View>
+        {/*Formulario de login*/}
+        <LoginForm
+          onSubmit={onSubmit}
+        />
+      </View>
 
-      </SafeAreaView>
+    </SafeAreaView>
 
 
 
-    );
-  };
+  );
+};
 
 
-  export default Login
+export default Login

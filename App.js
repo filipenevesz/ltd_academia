@@ -64,22 +64,6 @@ export default function App() {
     }
   }
 
-  // handleUserError = () => {
-  //   Alert.alert(
-  //     "Erro",
-  //     "Usuário não identificado",
-  //     [
-  //       {
-  //         text: "Sair",
-  //         onPress: () => {
-  //           removeToken();
-  //           setSignedIn(false);
-  //         },
-  //       },
-  //     ],
-  //     { cancelable: false }
-  //   );
-  // };
 
 
   return (

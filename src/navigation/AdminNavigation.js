@@ -11,7 +11,7 @@ import Config from "../screens/(auth)/(admin)/config"
 
 const Tab = createBottomTabNavigator();
 
-export default function AdminNavigation( {onLogout} ) {
+export default function AdminNavigation({ onLogout }) {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -95,19 +95,20 @@ export default function AdminNavigation( {onLogout} ) {
                     ),
                 }}
             />
-           
-           <Tab.Screen
-        name="Configurações"
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings-sharp" color={color} size={size} />
-          ),
-        }}
-      >
-        {(props) => <Config {...props} onLogout={onLogout} />}
-      </Tab.Screen>
-            
+
+            <Tab.Screen
+                name="Configurações"
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="settings-sharp" color={color} size={size} />
+                    ),
+                }}
+            >
+                {(props) => <Config {...props} onLogout={onLogout} />}
+
+            </Tab.Screen>
+
         </Tab.Navigator>
     )
 }
